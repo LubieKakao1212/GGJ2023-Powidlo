@@ -8,12 +8,14 @@ public class MainMenu : MonoBehaviour
     [Header("Pararmeters")]
     [SerializeField] private string firstLevel;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject mainMenuShade;
     [SerializeField] private GameObject characterSelect;
     [SerializeField] private GameObject optionsMenu;
 
     private void Start()
     {
         mainMenu.SetActive(true);
+        mainMenuShade.SetActive(false);
         optionsMenu.SetActive(false);
     }
 
@@ -33,13 +35,13 @@ public class MainMenu : MonoBehaviour
     }
     public void OptionsOpen()
     {
-        mainMenu.SetActive(false);
+        mainMenuShade.SetActive(true);
         optionsMenu.SetActive(true);
     }
     public void OptionsClose()
     {
         optionsMenu.SetActive(false);
-        mainMenu.SetActive(true);
+        mainMenuShade.SetActive(false);
     }
 
     public void CloseGame()
