@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4607369383215216945
+--- !u!114 &-2982075847347843469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
-  Name: Desktop/Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638109453386605385
+  Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638110332667915865
   FileSizes:
-  - Name: 
-    Value: 712
+  - Name: Desktop
+    Value: 1036
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -33,17 +33,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -4607369383215216945}
-  - {fileID: 7490214550771093951}
+  - {fileID: 3213076864301333031}
+  - {fileID: -2982075847347843469}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7490214550771093951}
+  - {fileID: -2982075847347843469}
   StringsBanks:
-  - {fileID: -4607369383215216945}
-  cacheTime: 638109453386605385
+  - {fileID: 3213076864301333031}
+  cacheTime: 638110332667919165
   cacheVersion: 131601
---- !u!114 &7490214550771093951
+--- !u!114 &3213076864301333031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,11 +53,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../FMod/PowidloFModProject/Build/Desktop/Master.bank
-  Name: Desktop/Master
-  StudioPath: bank:/Master
-  lastModified: 638109453386446594
-  FileSizes: []
+  Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638110332667919165
+  FileSizes:
+  - Name: Desktop
+    Value: 712
   Exists: 1
