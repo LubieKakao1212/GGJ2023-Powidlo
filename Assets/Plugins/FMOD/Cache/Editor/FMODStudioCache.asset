@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4607369383215216945
+--- !u!114 &-4716879624505496585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
-  Name: Desktop/Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638109453386605385
+  Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638110464231793484
   FileSizes:
-  - Name: 
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &-2457638511717583515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638110464231793484
+  FileSizes:
+  - Name: Desktop
     Value: 712
   Exists: 1
 --- !u!114 &11400000
@@ -33,31 +53,13 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -4607369383215216945}
-  - {fileID: 7490214550771093951}
+  - {fileID: -2457638511717583515}
+  - {fileID: -4716879624505496585}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7490214550771093951}
+  - {fileID: -4716879624505496585}
   StringsBanks:
-  - {fileID: -4607369383215216945}
-  cacheTime: 638109453386605385
+  - {fileID: -2457638511717583515}
+  cacheTime: 638110464231793484
   cacheVersion: 131601
---- !u!114 &7490214550771093951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMod/PowidloFModProject/Build/Desktop/Master.bank
-  Name: Desktop/Master
-  StudioPath: bank:/Master
-  lastModified: 638109453386446594
-  FileSizes: []
-  Exists: 1
