@@ -71,14 +71,18 @@ public class OptionsMenu : MonoBehaviour
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, fullscreenToggle.isOn);
     }
-    
-    private void SetQuality()
+
+    public void ApplyGraphics()
     {
+        Screen.fullScreen = fullscreenToggle.isOn;
 
-    }
-
-    private void ToggleVsync()
-    {
-
+        if (vsyncToggle.isOn)
+        {
+            QualitySettings.vSyncCount = 1;
+        }
+        else
+        {
+            QualitySettings.vSyncCount = 0;
+        }
     }
 }
