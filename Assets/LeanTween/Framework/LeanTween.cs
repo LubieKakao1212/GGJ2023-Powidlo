@@ -4062,11 +4062,12 @@ public class LTGUI {
     }
 
     public static bool pressedWithinRect( Rect rect ){
-        Vector2 vec2 = firstTouch();
+        /*Vector2 vec2 = firstTouch();
         if(vec2.x<0f)
             return false;
         float vecY = Screen.height-vec2.y;
-        return (vec2.x > rect.x && vec2.x < rect.x + rect.width && vecY > rect.y && vecY < rect.y + rect.height);
+        return (vec2.x > rect.x && vec2.x < rect.x + rect.width && vecY > rect.y && vecY < rect.y + rect.height);*/
+        return false;
     }
 
     public static bool checkWithinRect(Vector2 vec2, Rect rect){
@@ -4074,7 +4075,7 @@ public class LTGUI {
         return (vec2.x > rect.x && vec2.x < rect.x + rect.width && vec2.y > rect.y && vec2.y < rect.y + rect.height);
     }
 
-    public static Vector2 firstTouch(){
+    /*public static Vector2 firstTouch(){
         if(Input.touchCount>0){
             return Input.touches[0].position;
         }else if(Input.GetMouseButton(0)){
@@ -4082,7 +4083,7 @@ public class LTGUI {
         }
 
         return new Vector2(Mathf.NegativeInfinity,Mathf.NegativeInfinity);
-    }
+    }*/
 
 }
 
