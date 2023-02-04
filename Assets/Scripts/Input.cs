@@ -35,6 +35,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""735925b1-9a68-4a97-8e9e-d59945c817e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Position"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c97ee1a3-747a-4a2b-9319-9177615e0c51"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_Position = m_Mouse.FindAction("Position", throwIfNotFound: true);
+        m_Mouse_Click = m_Mouse.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +138,13 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Mouse;
     private IMouseActions m_MouseActionsCallbackInterface;
     private readonly InputAction m_Mouse_Position;
+    private readonly InputAction m_Mouse_Click;
     public struct MouseActions
     {
         private @Input m_Wrapper;
         public MouseActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Position => m_Wrapper.m_Mouse_Position;
+        public InputAction @Click => m_Wrapper.m_Mouse_Click;
         public InputActionMap Get() { return m_Wrapper.m_Mouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +157,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Position.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
                 @Position.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
                 @Position.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
+                @Click.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
             }
             m_Wrapper.m_MouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +167,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Position.started += instance.OnPosition;
                 @Position.performed += instance.OnPosition;
                 @Position.canceled += instance.OnPosition;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
             }
         }
     }
@@ -148,5 +177,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
     public interface IMouseActions
     {
         void OnPosition(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }

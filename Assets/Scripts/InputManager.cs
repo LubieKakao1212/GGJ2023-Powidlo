@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 public class InputManager : MonoBehaviour
 {
     public static event Action<Vector2> PointerPositionChanged;
+    public static event Action PrimaryAction;
 
     public static InputManager instance;
 
@@ -20,6 +21,7 @@ public class InputManager : MonoBehaviour
         input = new Input();
 
         input.Mouse.Position.performed += (ctx) => PointerPositionChanged?.Invoke(ctx.ReadValue<Vector2>());
+        input.Mouse.Click.performed += (ctx) => PrimaryAction?.Invoke();
     }
 
     private void OnEnable()
