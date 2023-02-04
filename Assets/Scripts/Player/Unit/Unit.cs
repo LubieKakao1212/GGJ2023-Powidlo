@@ -31,6 +31,9 @@ public abstract class Unit : MonoBehaviour
             Debug.LogWarning("Cannot move unit that already moved");
             return;
         }
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricTeleport", GetComponent<Transform>().position);
+
         transform.position += delta;
         AlreadyMoved = true;
     }

@@ -40,6 +40,9 @@
 			<destination>{3d574ab7-8aae-49dc-8ee9-b632e64cd59d}</destination>
 			<destination>{7fa330a7-d293-424d-8002-9a9b4d8b6f25}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{2c4e1d4d-66f8-4779-af0c-41a3e99d5da7}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{c90a71ac-d651-4b37-a8de-7350f2b0ea53}">
 		<relationship name="masterBus">
@@ -356,6 +359,7 @@
 	<object class="MixerBusEffectChain" id="{abf56b07-6a94-437c-bd3a-f2ce2bdf62cc}">
 		<relationship name="effects">
 			<destination>{60d5ab70-ac8e-4051-b10a-7be1a9c7ccd4}</destination>
+			<destination>{dbe064f7-fdc8-4843-9d74-ac1dd4990c28}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e3e58fe8-89e3-4802-95a0-d1a9fed04693}" />
@@ -388,6 +392,23 @@
 	</object>
 	<object class="MixerBusFader" id="{8b80a0a5-0e91-41d9-a36b-574b6f116dfe}" />
 	<object class="MixerBusFader" id="{60d5ab70-ac8e-4051-b10a-7be1a9c7ccd4}" />
+	<object class="MultibandEqEffect" id="{dbe064f7-fdc8-4843-9d74-ac1dd4990c28}">
+		<property name="filterTypeA">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>207.88681</value>
+		</property>
+		<property name="frequencyE">
+			<value>4748.48975</value>
+		</property>
+		<property name="qualityA">
+			<value>1.24203444</value>
+		</property>
+		<property name="gainA">
+			<value>-6.72413635</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{531a1e3a-98cb-4912-bfcd-20fa1d6b11b1}">
 		<relationship name="parameter">
 			<destination>{846bedf3-1e99-432a-b768-aa630cae932a}</destination>

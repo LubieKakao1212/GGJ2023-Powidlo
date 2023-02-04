@@ -600,6 +600,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &298241271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8733467258984513092, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+  m_PrefabInstance: {fileID: 9162551236712789762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &298241277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298241271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -569941507
+      Data2: 1090543218
+      Data3: -872230526
+      Data4: -1141988295
+    Path: event:/VO/OldVO
+  Event: 
+  PlayEvent: 13
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10000
 --- !u!4 &345781760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6291603774872451605, guid: b4f68db99a2de544a94b07250c1a9e78, type: 3}
@@ -677,8 +712,8 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -686,14 +721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +813,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &547674115
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,8 +836,8 @@ GameObject:
   m_Component:
   - component: {fileID: 547674119}
   - component: {fileID: 547674118}
-  - component: {fileID: 547674117}
   - component: {fileID: 547674116}
+  - component: {fileID: 547674120}
   m_Layer: 0
   m_Name: BackgroundCamera
   m_TagString: Untagged
@@ -838,14 +878,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &547674117
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547674115}
-  m_Enabled: 1
 --- !u!20 &547674118
 Camera:
   m_ObjectHideFlags: 0
@@ -905,6 +937,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547674120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547674115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!114 &958113338 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5453625208196897333, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
@@ -926,8 +971,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1074528522}
   - component: {fileID: 1074528521}
-  - component: {fileID: 1074528520}
   - component: {fileID: 1074528519}
+  - component: {fileID: 1074528523}
   m_Layer: 0
   m_Name: PerspectiveCamera
   m_TagString: MainCamera
@@ -968,14 +1013,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1074528520
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074528518}
-  m_Enabled: 1
 --- !u!20 &1074528521
 Camera:
   m_ObjectHideFlags: 0
@@ -1034,6 +1071,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1074528523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074528518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1103183821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1199,7 @@ GameObject:
   - component: {fileID: 1279037630}
   - component: {fileID: 1279037629}
   - component: {fileID: 1279037628}
+  - component: {fileID: 1279037632}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1234,6 +1285,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279037632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279037627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1937385230}
+    Params:
+    - Name: Countdown
+      Value: 1
+  - Target: {fileID: 1937385228}
+    Params:
+    - Name: Countdown
+      Value: 1
+  TriggerEvent: 13
+--- !u!1 &1345507772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 438091606056630970, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+  m_PrefabInstance: {fileID: 4361905220672376946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345507778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345507772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 181590377
+      Data2: 1226449186
+      Data3: -1868191307
+      Data4: 1853882678
+    Path: event:/VO/ModernVO
+  Event: 
+  PlayEvent: 13
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10000
 --- !u!1 &1504912154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1444,7 @@ MonoBehaviour:
   displayControl: {fileID: 45766425}
   distance: 0
   <pointDensity>k__BackingField: 0
-  bounds:
+  <bounds>k__BackingField:
     serializedVersion: 2
     x: 0
     y: 0
@@ -1386,6 +1495,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d69cb2b7f303ee4184f875707205ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1937385227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937385229}
+  - component: {fileID: 1937385228}
+  - component: {fileID: 1937385230}
+  m_Layer: 0
+  m_Name: FModMusicAmb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1937385228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937385227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 967553879
+      Data2: 1254062411
+      Data3: 1723362192
+      Data4: -803005168
+    Path: event:/Music/MusicInGame
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Countdown
+    Value: 0
+  - Name: IsCapturing
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1937385229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937385227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.41, y: 4.23, z: -4.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937385230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937385227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 843790897
+      Data2: 1160607721
+      Data3: 1610073225
+      Data4: -1855329580
+    Path: event:/SFX/Amb
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1555808050501435219
 PrefabInstance:
   m_ObjectHideFlags: 0
