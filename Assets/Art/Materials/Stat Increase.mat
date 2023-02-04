@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProceduralMetal
-  m_Shader: {fileID: -6465566751694194690, guid: de52ee673b1a498448b1bcb43ee33e1d, type: 3}
+  m_Name: Stat Increase
+  m_Shader: {fileID: -6465566751694194690, guid: 18d8a80342b36aa418784c3c27236ea0, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -48,6 +48,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -83,58 +87,42 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorMultiply: 0.87
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Direction: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Height: 0.1
     - _Metallic: 0
-    - _Metalness: 0.7
-    - _NoiseScale: 1000
     - _OcclusionStrength: 1
+    - _Opacity: 1
     - _Parallax: 0.005
-    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RustClampDownLimit: 0
-    - _RustClampUpperLimit: 1
-    - _RustDetailNoiseScale: 500
-    - _RustDetailNoiseScale_2: 200
-    - _RustDetailNormalStrength: 0.0172
-    - _RustNoiseScale: 50
-    - _RustNoiseScale_2: 20
-    - _RustNoiseScale_2Strength: 0.62
-    - _RustPosterizeProgress: 2.05
-    - _RustProgress: 1.5
-    - _RustStepProgress: 1
     - _Smoothness: 0.5
-    - _SmoothnessMultiply: 0.22
-    - _SmoothnessPower: 0.43
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0.3
     - _SrcBlend: 1
     - _Surface: 0
-    - _VerticalLinesScale: 100
+    - _Width: 0.25
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _Albedo: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BottomColor: {r: 1, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RGBW_Color_Multiply: {r: 3.36, g: -2.9, b: 0, a: 0}
-    - _RustClampVector: {r: 0, g: 1, b: 0, a: 0}
-    - _RustClolor: {r: 1, g: 0.6244066, b: 0.4292453, a: 0}
-    - _RustNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _MainColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _VerticalLinesTiling: {r: 0.1, g: 6, b: 0, a: 0}
+    - _TopColor: {r: 1, g: 0.7776269, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7862476670189540154
+--- !u!114 &8577741528146774951
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
