@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
         mainMenuShade.SetActive(false);
         optionsMenu.SetActive(false);
+        characterSelect.SetActive(false);
     }
 
     public void LoadFirstLevel()
