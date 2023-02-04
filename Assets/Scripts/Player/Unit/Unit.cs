@@ -57,6 +57,7 @@ public abstract class Unit : MonoBehaviour
         }
         transform.position += delta;
         AlreadyMoved = true;
+        AlreadyUsedAction = true;
     }
 
     public void SwitchMaterial(Material target)
@@ -82,6 +83,11 @@ public abstract class Unit : MonoBehaviour
     private void Start()
     {
         Owner.SelectedUnitChanged += AdjustMaterial;
+    }
+
+    private void OnDestroy()
+    {
+        Owner.SelectedUnitChanged -= AdjustMaterial;
     }
 
     private void AdjustMaterial()

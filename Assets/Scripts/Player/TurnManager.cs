@@ -28,6 +28,9 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI clock;
 
+    [SerializeField]
+    private GameObject board;
+
     private float currentTime = 0;
 
     private int currentPlayerIndex;
@@ -36,9 +39,11 @@ public class TurnManager : MonoBehaviour
     {
         //moveManager.DisabeControl();
         ResetClock();
-        
+
         currentPlayerIndex = (++currentPlayerIndex) % players.Count;
-        
+
+        LeanTween.rotateY(board, 180f * currentPlayerIndex, 1f);
+
         CurrentPlayer.DisabeControl();
         CurrentPlayer.SelectedUnitChanged -= OnPlayerUnitChanged;
 

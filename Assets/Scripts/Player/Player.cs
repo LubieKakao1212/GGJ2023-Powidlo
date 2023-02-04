@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public event Action SelectedUnitChanged;
 
-    public Unit CurrentUnit => units[unit];
+    public Unit CurrentUnit => units[unit % units.Count];
 
     [SerializeField]
     private List<Unit> units;
@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
 
         unit.DoAction(hit.point);
         unit.AlreadyUsedAction = true;
+        unit.AlreadyMoved = true;
     }
 
     public void KillUnit(Unit unit)

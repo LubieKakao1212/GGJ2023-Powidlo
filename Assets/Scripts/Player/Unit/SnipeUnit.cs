@@ -12,6 +12,10 @@ public class SnipeUnit : Unit
         var laser = Instantiate(laserPrefab);
         laser.playerId = playerId;
 
-        laser.Prime(new Ray(transform.position, worldCursor - transform.position));
+        var dir = worldCursor - transform.position;
+
+        laser.Prime(new Ray(transform.position, dir));
+
+        transform.rotation = Quaternion.LookRotation(dir.normalized, Vector3.up);
     }
 }
