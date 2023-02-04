@@ -32,7 +32,7 @@ public class TurnManager : MonoBehaviour
         
         CurrentPlayer.EnableControl();
         CurrentPlayer.SelectedUnitChanged += OnPlayerUnitChanged;
-        moveManager.SetTarget(CurrentPlayer.CurrentUnit.transform);
+        moveManager.SetTarget(CurrentPlayer.CurrentUnit);
 
         TurnPasses?.Invoke();
     }
@@ -62,6 +62,17 @@ public class TurnManager : MonoBehaviour
 
     private void OnPlayerUnitChanged()
     {
-        moveManager.SetTarget(CurrentPlayer.CurrentUnit.transform);
+        var unit = CurrentPlayer.CurrentUnit;
+        if (unit.AlreadyMoved)
+        {
+            moveManager.DisabeControl();
+            moveManager.gameObject.SetActive(false);
+        }
+        else
+        {
+            moveManager.EnableControl();
+            moveManager.gameObject.SetActive(true);
+            moveManager.SetTarget(CurrentPlayer.CurrentUnit);
+        }
     } 
 }

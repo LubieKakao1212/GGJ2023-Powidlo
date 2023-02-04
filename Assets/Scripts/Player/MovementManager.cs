@@ -98,7 +98,7 @@ public class MovementManager : MonoBehaviour
         SetCurrentFunction(functionsByOrder[i]);
     }
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Unit target)
     {
         functionMover.SetTargetController(target, currentFunction);
     }

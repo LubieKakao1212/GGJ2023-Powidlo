@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveToFunction : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
+    private Unit target;
 
     [SerializeField]
     private FunctionController controller;
@@ -17,7 +17,7 @@ public class MoveToFunction : MonoBehaviour
     private bool startDisabled;
     private bool isEnabled;
 
-    public void SetTargetController(Transform target, FunctionController controller)
+    public void SetTargetController(Unit target, FunctionController controller)
     {
         this.target = target;
         SetController(controller);
@@ -26,7 +26,7 @@ public class MoveToFunction : MonoBehaviour
     public void SetController(FunctionController controller)
     {
         this.controller = controller;
-        controller.transform.position = target.position;
+        controller.transform.position = target.transform.position;
 
         controller.Generate();
 
@@ -79,21 +79,21 @@ public class MoveToFunction : MonoBehaviour
 
         Physics.Raycast(ray,out RaycastHit hit, Mathf.Infinity);
 
-        lastPos = controller.UpdateControl((hit.point - target.position).XZToXY());
+        lastPos = controller.UpdateControl((hit.point - target.transform.position).XZToXY());
     }
     
     private void Move()
     {
         if (controller.bounds.Contains(lastPos))
         {
-            target.position += new Vector3(lastPos.x, 0f, lastPos.y);
-            controller.transform.position = target.position;
+            target.Move(new Vector3(lastPos.x, 0f, lastPos.y));
+            controller.transform.position = target.transform.position;
 
             UpdatePointer();
         }
         else
         {
-            //Playe Sound
+            //Play Sound
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,6 +16,11 @@ public class Player : MonoBehaviour
     private int unit = 0;
 
     private bool isEnabled;
+
+    private void Start()
+    {
+        TurnManager.TurnPasses += ResetUnitUseState;
+    }
 
     public void DisabeControl()
     {
@@ -37,29 +43,38 @@ public class Player : MonoBehaviour
 
     public void NextUnit()
     {
-        unit = (++unit) % units.Count;
-        SelectedUnitChanged?.Invoke();
+        int previous = unit++;
+        unit = unit % units.Count;
+
+        SelectUnit(previous);
     }
 
     public void PreviousUnit()
     {
-        unit--;
+        int previous = unit--;
 
         if (unit < 0)
         {
             unit = units.Count - 1;
         }
 
-        SelectedUnitChanged?.Invoke();
+        SelectUnit(previous);
     }
 
     public void DoUnitAction()
     {
+        var unit = CurrentUnit;
+        if (unit.AlreadyUsedAction)
+        {
+            //Todo play sountd
+            return;
+        }
         Ray ray = Camera.main.ScreenPointToRay(InputManager.MousePos);
 
         Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 8);
 
-        CurrentUnit.DoAction(hit.point);
+        unit.DoAction(hit.point);
+        unit.AlreadyUsedAction = true;
     }
 
     public void KillUnit(Unit unit)
@@ -81,6 +96,26 @@ public class Player : MonoBehaviour
             }
 
             Destroy(unit.gameObject);
+        }
+    }
+
+    private void SelectUnit(int previous)
+    {
+        var cUnit = CurrentUnit;
+        var pUnit = units[previous];
+
+        pUnit.GetComponent<MeshRenderer>().material = pUnit.NormalMaterial;
+        cUnit.GetComponent<MeshRenderer>().material = cUnit.SelectedMateria;
+
+        SelectedUnitChanged?.Invoke();
+    }
+
+    private void ResetUnitUseState()
+    {
+        foreach (var unit in units)
+        {
+            unit.AlreadyMoved = false;
+            unit.AlreadyUsedAction = false;
         }
     }
 }
