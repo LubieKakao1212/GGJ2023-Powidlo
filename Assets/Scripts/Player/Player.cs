@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
         var cUnit = CurrentUnit;
         var pUnit = units[previous];
 
-        pUnit.GetComponent<MeshRenderer>().material = pUnit.NormalMaterial;
-        cUnit.GetComponent<MeshRenderer>().material = cUnit.SelectedMateria;
+        pUnit.SwitchMaterial(pUnit.NormalMaterial);
+        cUnit.SwitchMaterial(cUnit.SelectedMateria);
 
         SelectedUnitChanged?.Invoke();
     }

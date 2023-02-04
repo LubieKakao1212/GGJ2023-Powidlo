@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1546398465625760724, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <playerId>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1770135225395513117, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -23,9 +27,29 @@ PrefabInstance:
       propertyPath: <playerId>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4835000305189162405, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835000305189162409, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <playerId>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4863264660306096169, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: <playerId>k__BackingField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005312343197573588, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005312343197573588, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828898854752439749, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5874944808800512064, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34,6 +58,14 @@ PrefabInstance:
     - target: {fileID: 6266441781521493688, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599726850470241364, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <playerId>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806835825559717726, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <playerId>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7848804825914203387, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: <playerId>k__BackingField
