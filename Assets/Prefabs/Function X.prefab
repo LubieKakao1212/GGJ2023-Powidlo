@@ -53,7 +53,7 @@ MonoBehaviour:
   displayControl: {fileID: 340021826485210661}
   distance: 0
   <pointDensity>k__BackingField: 20
-  bounds:
+  <bounds>k__BackingField:
     serializedVersion: 2
     x: -2
     y: -2
