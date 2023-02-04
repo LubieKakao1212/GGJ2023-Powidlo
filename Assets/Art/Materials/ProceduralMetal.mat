@@ -100,8 +100,13 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RustClampDownLimit: 0
+    - _RustClampUpperLimit: 1
+    - _RustDetailNoiseScale: 1000
+    - _RustDetailNormalStrength: 0.0125
     - _RustNoiseScale: 50
-    - _RustProgress: 1.61
+    - _RustPosterizeProgress: 1.52
+    - _RustProgress: 1.284
     - _Smoothness: 0.5
     - _SmoothnessMultiply: 0.22
     - _SmoothnessPower: 0.43
@@ -117,7 +122,8 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RustClolor: {r: 1, g: 0.3399687, b: 0, a: 0}
+    - _RustClampVector: {r: 0, g: 1, b: 0, a: 0}
+    - _RustClolor: {r: 1, g: 0.5601796, b: 0.33490568, a: 0}
     - _RustNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _VerticalLinesTiling: {r: 0.1, g: 6, b: 0, a: 0}
