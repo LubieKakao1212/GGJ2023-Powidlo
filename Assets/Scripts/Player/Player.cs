@@ -101,11 +101,11 @@ public class Player : MonoBehaviour
 
     private void SelectUnit(int previous)
     {
-        var cUnit = CurrentUnit;
+        /*var cUnit = CurrentUnit;
         var pUnit = units[previous];
 
         pUnit.SwitchMaterial(pUnit.NormalMaterial);
-        cUnit.SwitchMaterial(cUnit.SelectedMateria);
+        cUnit.SwitchMaterial(cUnit.SelectedMateria);*/
 
         SelectedUnitChanged?.Invoke();
     }

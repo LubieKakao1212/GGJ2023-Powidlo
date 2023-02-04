@@ -50,6 +50,8 @@ MonoBehaviour:
   playerId: 0
   damage: 5
   size: 3
+  isRanged: 0
+  damageOnStartup: 1
 --- !u!23 &3342736444874782818
 MeshRenderer:
   m_ObjectHideFlags: 0

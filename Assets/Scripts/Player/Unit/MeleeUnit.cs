@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoeUnit : Unit
+public class MeleeUnit : Unit
 {
     [SerializeField]
     private TickingExplosion explosion;
@@ -11,5 +11,7 @@ public class AoeUnit : Unit
     {
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         expl.playerId = playerId;
+
+        SkipNextTurn();
     }
 }

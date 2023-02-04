@@ -33,7 +33,7 @@ public abstract class Unit : MonoBehaviour
 
     [field: SerializeField]
     public int health { get; private set; } = 10;
-
+    
     public void Damage(int amount)
     {
         health -= amount;
@@ -62,5 +62,37 @@ public abstract class Unit : MonoBehaviour
     public void SwitchMaterial(Material target)
     {
         rend.material = target;
+    }
+
+    public void SkipNextTurn()
+    {
+        TurnManager.TurnPasses += SkipTurn;
+    }
+
+    public void SkipTurn()
+    {
+        AlreadyMoved = true;
+        AlreadyUsedAction = true;
+        if (TurnManager.Instance.CurrentPlayer == Owner)
+        {
+            TurnManager.TurnPasses -= SkipTurn;
+        }
+    }
+
+    private void Start()
+    {
+        Owner.SelectedUnitChanged += AdjustMaterial;
+    }
+
+    private void AdjustMaterial()
+    {
+        if (Owner.CurrentUnit != this)
+        {
+            SwitchMaterial(NormalMaterial);
+        }
+        else
+        {
+            SwitchMaterial(SelectedMateria);
+        }
     }
 }

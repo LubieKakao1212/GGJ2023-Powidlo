@@ -1,21 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static DamageUtil;
 
 public class TickingExplosion : TickingAttack
 {
     [SerializeField]
-    float size;
-    
+    private float size;
+
+    [SerializeField]
+    private bool isRanged;
+
+    [SerializeField]
+    private bool damageOnStartup;
+
+    protected override void Start()
+    {
+        base.Start();
+        if(damageOnStartup) {
+            Explode();
+        }
+    }
+
     protected override void Explode()
     {
         Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f, 1 << 7);
 
         foreach (var obj in objects)
         {
-            var unit = obj.GetComponent<Unit>();
-
-            DealDamage(unit);
+            DealDamage(obj, playerId, damage, isRanged);
         }
     }
 }

@@ -9,12 +9,4 @@ public abstract class TickingAttack : Ticking
 
     [SerializeField]
     public int damage;
-
-    protected void DealDamage(Unit unit)
-    {
-        if (unit != null && playerId != unit.playerId)
-        {
-            unit.Damage(damage);
-        }
-    }
 }

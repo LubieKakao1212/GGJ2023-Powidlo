@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static DamageUtil;
 
 public class Laser : TickingAttack
 {
@@ -14,25 +15,13 @@ public class Laser : TickingAttack
     public void Prime(Ray ray)
     {
         Vector3 endPoint = ray.GetPoint(maxDistance);
-        List<RaycastHit> hits = Physics.RaycastAll(ray, 10).ToList();
-        hits.Sort((hit1, hit2) => (int)Mathf.Sign(hit1.distance - hit2.distance));
-        foreach (var hit in hits)
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
-            Debug.Log(hit.distance);
             var col = hit.collider;
-            if (col.tag == "LaserProof")
-            {
-                endPoint = hit.point;
-                break;
-            }
+            endPoint = hit.point;
 
-            var unit = col.GetComponent<Unit>();
-            if (unit != null)
-            {
-                DealDamage(unit);
-            }
+            DealDamage(col, playerId, damage, true);
         }
-
         laserLine.positionCount = 2;
         laserLine.SetPositions(new Vector3[] { ray.origin, endPoint });
     }

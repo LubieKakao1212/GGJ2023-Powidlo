@@ -150,7 +150,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.125
+  m_Radius: 0.26
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8812480764247843928
 PrefabInstance:

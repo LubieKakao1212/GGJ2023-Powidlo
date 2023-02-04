@@ -32,14 +32,14 @@ public class ObstacleManager : MonoBehaviour
                 else
                 {
                     flag = true;
-                    selected.Add(j);
+                    selected.Insert(j, r);
                     break;
                 }
             }
 
             if (!flag)
             {
-                selected.Add(i);
+                selected.Add(r);
             }
         }
 

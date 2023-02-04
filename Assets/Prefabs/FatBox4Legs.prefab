@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6722981967455456296}
   - component: {fileID: 4039184661248975316}
+  - component: {fileID: 4022365621903032925}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: LaserProof
@@ -47,6 +48,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6868695, y: 0.56468785, z: 0.49406493}
   m_Center: {x: -0.0016769767, y: 0.0382552, z: -0.014684081}
+--- !u!114 &4022365621903032925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383614076489382292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac3ecf70b2872c4e817c8ab3354e3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2647675936361653920
 GameObject:
   m_ObjectHideFlags: 0

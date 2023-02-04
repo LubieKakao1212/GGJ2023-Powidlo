@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598628092586865915}
   - component: {fileID: 8738435901205790856}
+  - component: {fileID: 643554747455240038}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: LaserProof
@@ -248,3 +249,19 @@ CapsuleCollider:
   m_Height: 2.1279438
   m_Direction: 1
   m_Center: {x: 0, y: 0.2257582, z: 0}
+--- !u!114 &643554747455240038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437242696694644260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7a725505432074c8020a1476c41139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 7930821702812742874, guid: 88b07bfecd2e24d48bb3d717b3e59c73, type: 3}
+  discharged: 0
+  capacitance: 3
+  charge: 0

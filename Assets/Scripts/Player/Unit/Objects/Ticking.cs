@@ -7,7 +7,7 @@ public abstract class Ticking : MonoBehaviour
     [SerializeField]
     private int timer = 2;
 
-    private void Start()
+    protected virtual void Start()
     {
         TurnManager.TurnPasses += Tick;
     }
