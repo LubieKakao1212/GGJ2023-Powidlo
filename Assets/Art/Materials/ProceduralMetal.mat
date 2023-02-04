@@ -83,6 +83,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorMultiply: 0.87
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -102,11 +103,14 @@ Material:
     - _ReceiveShadows: 1
     - _RustClampDownLimit: 0
     - _RustClampUpperLimit: 1
-    - _RustDetailNoiseScale: 1000
-    - _RustDetailNormalStrength: 0.0125
+    - _RustDetailNoiseScale: 500
+    - _RustDetailNoiseScale_2: 200
+    - _RustDetailNormalStrength: 0.0172
     - _RustNoiseScale: 50
-    - _RustPosterizeProgress: 1.52
-    - _RustProgress: 1.284
+    - _RustNoiseScale_2: 20
+    - _RustNoiseScale_2Strength: 0.62
+    - _RustPosterizeProgress: 2.05
+    - _RustProgress: 1.5
     - _Smoothness: 0.5
     - _SmoothnessMultiply: 0.22
     - _SmoothnessPower: 0.43
@@ -122,8 +126,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RGBW_Color_Multiply: {r: 3.36, g: -2.9, b: 0, a: 0}
     - _RustClampVector: {r: 0, g: 1, b: 0, a: 0}
-    - _RustClolor: {r: 1, g: 0.5601796, b: 0.33490568, a: 0}
+    - _RustClolor: {r: 1, g: 0.6244066, b: 0.4292453, a: 0}
     - _RustNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _VerticalLinesTiling: {r: 0.1, g: 6, b: 0, a: 0}
