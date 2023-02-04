@@ -15,7 +15,7 @@ public class Laser : TickingAttack
     {
         Vector3 endPoint = ray.GetPoint(maxDistance);
         List<RaycastHit> hits = Physics.RaycastAll(ray, 10).ToList();
-        hits.Sort((hit1, hit2) => (int)Mathf.Sign(hit2.distance - hit1.distance));
+        hits.Sort((hit1, hit2) => (int)Mathf.Sign(hit1.distance - hit2.distance));
         foreach (var hit in hits)
         {
             Debug.Log(hit.distance);
