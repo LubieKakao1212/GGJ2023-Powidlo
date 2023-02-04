@@ -18,8 +18,8 @@ public class FunctionController : MonoBehaviour
     [field: SerializeField]
     public float pointDensity { get; private set; }
 
-    [SerializeField]
-    private Rect bounds;
+    [field: SerializeField]
+    public Rect bounds { get; private set; }
     
     [SerializeField]
     private GameObject functionProvider;
@@ -55,6 +55,16 @@ public class FunctionController : MonoBehaviour
         return p;
     }
 
+    [ContextMenu("Generate")]
+    public void Generate()
+    {
+        foreach (var segment in segments)
+        {
+            segment.Controller = this;
+            segment.Bake(bounds);
+        }
+    }
+
     private Vector2 GetClosest(IFunction func, Vector2 pointOnCurve, Vector2 position, float direction)
     {
         float distance = Mathf.Infinity;
@@ -88,15 +98,7 @@ public class FunctionController : MonoBehaviour
         displayControl.positionCount = 2;
     }
 
-    [ContextMenu("Generate")]
-    private void Generate()
-    {
-        foreach (var segment in segments)
-        {
-            segment.Controller = this;
-            segment.Bake(bounds);
-        }
-    }
+    
 
     public IFunction GetFunction()
     {

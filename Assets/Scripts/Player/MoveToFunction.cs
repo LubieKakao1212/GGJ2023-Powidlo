@@ -1,18 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveToFunction : MonoBehaviour
 {
     [SerializeField]
+    private Transform target;
+
+    [SerializeField]
     private FunctionController controller;
 
     private Vector2 lastPos;
 
+    [SerializeField]
+    private bool startDisabled;
+    private bool isEnabled;
+
+    public void SetTargetController(Transform target, FunctionController controller)
+    {
+        this.target = target;
+        SetController(controller);
+    }
+
+    public void SetController(FunctionController controller)
+    {
+        this.controller = controller;
+        controller.transform.position = target.position;
+
+        controller.Generate();
+
+        UpdatePointer(InputManager.MousePos);
+    }
+
+    public void DisabeControl()
+    {
+        InputManager.PointerPositionChanged -= UpdatePointer;
+        InputManager.PrimaryAction -= Move;
+        isEnabled = false;
+    }
+
+    public void EnableControl()
+    {
+        if (!isEnabled)
+        {
+            InputManager.PointerPositionChanged += UpdatePointer;
+            InputManager.PrimaryAction += Move;
+            isEnabled = true;
+        }
+    }
+
+    public void UpdatePointer()
+    {
+        UpdatePointer(InputManager.MousePos);
+    }
+
+    private void OnEnable()
+    {
+        EnableControl();
+    }
+
     private void Start()
     {
-        InputManager.PointerPositionChanged += UpdatePointer;
-        InputManager.PrimaryAction += Move;
+        if (startDisabled)
+        {
+            DisabeControl();
+        }
+    }
+
+    private void OnDisable()
+    {
+        DisabeControl();
     }
 
     private void UpdatePointer(Vector2 pos)
@@ -21,11 +79,21 @@ public class MoveToFunction : MonoBehaviour
 
         Physics.Raycast(ray,out RaycastHit hit, Mathf.Infinity);
 
-        lastPos = controller.UpdateControl((hit.point - transform.position).XZToXY());
+        lastPos = controller.UpdateControl((hit.point - target.position).XZToXY());
     }
-
+    
     private void Move()
     {
-        transform.position += new Vector3(lastPos.x, 0f, lastPos.y);
+        if (controller.bounds.Contains(lastPos))
+        {
+            target.position += new Vector3(lastPos.x, 0f, lastPos.y);
+            controller.transform.position = target.position;
+
+            UpdatePointer();
+        }
+        else
+        {
+            //Playe Sound
+        }
     }
 }

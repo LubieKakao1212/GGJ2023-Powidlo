@@ -44,6 +44,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd2cb31f-2bc5-4669-a290-e4f229dc971d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,133 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fda9d02-bfa1-41b0-932c-c8fe85cdd29a"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Selection"",
+            ""id"": ""27a1b8d3-38a7-4876-a2b5-92694e5940e7"",
+            ""actions"": [
+                {
+                    ""name"": ""NextPrimary"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba742b39-36df-4dab-b914-6beb8d861c46"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PreviousPrimary"",
+                    ""type"": ""Button"",
+                    ""id"": ""368e3dab-ac32-43db-97c6-f3eaca9a310b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextSecondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""971d0216-ffd5-4492-b499-c9b7ad11324b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PreviousSecondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""9cd1577f-27ff-41d3-88e6-187478eb0986"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2bce26ec-ad88-47c0-8476-e1aa26c847f1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9749162f-8138-45b8-a712-a30305299041"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PreviousPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd7c657b-8e5d-46f4-801d-3fe5214d1597"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e1096bd-03c4-411d-8e7f-014f3e377c78"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PreviousSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Turn"",
+            ""id"": ""dbc4b273-9678-41fe-a984-d158ccbb5ff5"",
+            ""actions"": [
+                {
+                    ""name"": ""EndTurn"",
+                    ""type"": ""Button"",
+                    ""id"": ""51848812-1f3e-48ef-a015-34173994cb80"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5891e975-8ca2-4228-8dfb-be1831c9f741"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EndTurn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +214,16 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_Position = m_Mouse.FindAction("Position", throwIfNotFound: true);
         m_Mouse_Click = m_Mouse.FindAction("Click", throwIfNotFound: true);
+        m_Mouse_RClick = m_Mouse.FindAction("RClick", throwIfNotFound: true);
+        // Selection
+        m_Selection = asset.FindActionMap("Selection", throwIfNotFound: true);
+        m_Selection_NextPrimary = m_Selection.FindAction("NextPrimary", throwIfNotFound: true);
+        m_Selection_PreviousPrimary = m_Selection.FindAction("PreviousPrimary", throwIfNotFound: true);
+        m_Selection_NextSecondary = m_Selection.FindAction("NextSecondary", throwIfNotFound: true);
+        m_Selection_PreviousSecondary = m_Selection.FindAction("PreviousSecondary", throwIfNotFound: true);
+        // Turn
+        m_Turn = asset.FindActionMap("Turn", throwIfNotFound: true);
+        m_Turn_EndTurn = m_Turn.FindAction("EndTurn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,12 +285,14 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private IMouseActions m_MouseActionsCallbackInterface;
     private readonly InputAction m_Mouse_Position;
     private readonly InputAction m_Mouse_Click;
+    private readonly InputAction m_Mouse_RClick;
     public struct MouseActions
     {
         private @Input m_Wrapper;
         public MouseActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Position => m_Wrapper.m_Mouse_Position;
         public InputAction @Click => m_Wrapper.m_Mouse_Click;
+        public InputAction @RClick => m_Wrapper.m_Mouse_RClick;
         public InputActionMap Get() { return m_Wrapper.m_Mouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -160,6 +308,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Click.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnClick;
+                @RClick.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnRClick;
+                @RClick.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnRClick;
+                @RClick.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnRClick;
             }
             m_Wrapper.m_MouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -170,13 +321,118 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @RClick.started += instance.OnRClick;
+                @RClick.performed += instance.OnRClick;
+                @RClick.canceled += instance.OnRClick;
             }
         }
     }
     public MouseActions @Mouse => new MouseActions(this);
+
+    // Selection
+    private readonly InputActionMap m_Selection;
+    private ISelectionActions m_SelectionActionsCallbackInterface;
+    private readonly InputAction m_Selection_NextPrimary;
+    private readonly InputAction m_Selection_PreviousPrimary;
+    private readonly InputAction m_Selection_NextSecondary;
+    private readonly InputAction m_Selection_PreviousSecondary;
+    public struct SelectionActions
+    {
+        private @Input m_Wrapper;
+        public SelectionActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NextPrimary => m_Wrapper.m_Selection_NextPrimary;
+        public InputAction @PreviousPrimary => m_Wrapper.m_Selection_PreviousPrimary;
+        public InputAction @NextSecondary => m_Wrapper.m_Selection_NextSecondary;
+        public InputAction @PreviousSecondary => m_Wrapper.m_Selection_PreviousSecondary;
+        public InputActionMap Get() { return m_Wrapper.m_Selection; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SelectionActions set) { return set.Get(); }
+        public void SetCallbacks(ISelectionActions instance)
+        {
+            if (m_Wrapper.m_SelectionActionsCallbackInterface != null)
+            {
+                @NextPrimary.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextPrimary;
+                @NextPrimary.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextPrimary;
+                @NextPrimary.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextPrimary;
+                @PreviousPrimary.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousPrimary;
+                @PreviousPrimary.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousPrimary;
+                @PreviousPrimary.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousPrimary;
+                @NextSecondary.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextSecondary;
+                @NextSecondary.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextSecondary;
+                @NextSecondary.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnNextSecondary;
+                @PreviousSecondary.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousSecondary;
+                @PreviousSecondary.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousSecondary;
+                @PreviousSecondary.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPreviousSecondary;
+            }
+            m_Wrapper.m_SelectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NextPrimary.started += instance.OnNextPrimary;
+                @NextPrimary.performed += instance.OnNextPrimary;
+                @NextPrimary.canceled += instance.OnNextPrimary;
+                @PreviousPrimary.started += instance.OnPreviousPrimary;
+                @PreviousPrimary.performed += instance.OnPreviousPrimary;
+                @PreviousPrimary.canceled += instance.OnPreviousPrimary;
+                @NextSecondary.started += instance.OnNextSecondary;
+                @NextSecondary.performed += instance.OnNextSecondary;
+                @NextSecondary.canceled += instance.OnNextSecondary;
+                @PreviousSecondary.started += instance.OnPreviousSecondary;
+                @PreviousSecondary.performed += instance.OnPreviousSecondary;
+                @PreviousSecondary.canceled += instance.OnPreviousSecondary;
+            }
+        }
+    }
+    public SelectionActions @Selection => new SelectionActions(this);
+
+    // Turn
+    private readonly InputActionMap m_Turn;
+    private ITurnActions m_TurnActionsCallbackInterface;
+    private readonly InputAction m_Turn_EndTurn;
+    public struct TurnActions
+    {
+        private @Input m_Wrapper;
+        public TurnActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @EndTurn => m_Wrapper.m_Turn_EndTurn;
+        public InputActionMap Get() { return m_Wrapper.m_Turn; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TurnActions set) { return set.Get(); }
+        public void SetCallbacks(ITurnActions instance)
+        {
+            if (m_Wrapper.m_TurnActionsCallbackInterface != null)
+            {
+                @EndTurn.started -= m_Wrapper.m_TurnActionsCallbackInterface.OnEndTurn;
+                @EndTurn.performed -= m_Wrapper.m_TurnActionsCallbackInterface.OnEndTurn;
+                @EndTurn.canceled -= m_Wrapper.m_TurnActionsCallbackInterface.OnEndTurn;
+            }
+            m_Wrapper.m_TurnActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @EndTurn.started += instance.OnEndTurn;
+                @EndTurn.performed += instance.OnEndTurn;
+                @EndTurn.canceled += instance.OnEndTurn;
+            }
+        }
+    }
+    public TurnActions @Turn => new TurnActions(this);
     public interface IMouseActions
     {
         void OnPosition(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
+        void OnRClick(InputAction.CallbackContext context);
+    }
+    public interface ISelectionActions
+    {
+        void OnNextPrimary(InputAction.CallbackContext context);
+        void OnPreviousPrimary(InputAction.CallbackContext context);
+        void OnNextSecondary(InputAction.CallbackContext context);
+        void OnPreviousSecondary(InputAction.CallbackContext context);
+    }
+    public interface ITurnActions
+    {
+        void OnEndTurn(InputAction.CallbackContext context);
     }
 }

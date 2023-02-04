@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RClick",
+                    "type": "Button",
+                    "id": "fd2cb31f-2bc5-4669-a290-e4f229dc971d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -44,6 +53,133 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fda9d02-bfa1-41b0-932c-c8fe85cdd29a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Selection",
+            "id": "27a1b8d3-38a7-4876-a2b5-92694e5940e7",
+            "actions": [
+                {
+                    "name": "NextPrimary",
+                    "type": "Button",
+                    "id": "ba742b39-36df-4dab-b914-6beb8d861c46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousPrimary",
+                    "type": "Button",
+                    "id": "368e3dab-ac32-43db-97c6-f3eaca9a310b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextSecondary",
+                    "type": "Button",
+                    "id": "971d0216-ffd5-4492-b499-c9b7ad11324b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousSecondary",
+                    "type": "Button",
+                    "id": "9cd1577f-27ff-41d3-88e6-187478eb0986",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2bce26ec-ad88-47c0-8476-e1aa26c847f1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextPrimary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9749162f-8138-45b8-a712-a30305299041",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousPrimary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd7c657b-8e5d-46f4-801d-3fe5214d1597",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextSecondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e1096bd-03c4-411d-8e7f-014f3e377c78",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousSecondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Turn",
+            "id": "dbc4b273-9678-41fe-a984-d158ccbb5ff5",
+            "actions": [
+                {
+                    "name": "EndTurn",
+                    "type": "Button",
+                    "id": "51848812-1f3e-48ef-a015-34173994cb80",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5891e975-8ca2-4228-8dfb-be1831c9f741",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EndTurn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
