@@ -66,16 +66,17 @@ public class Player : MonoBehaviour
         var unit = CurrentUnit;
         if (unit.AlreadyUsedAction)
         {
-            //Todo play sountd
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
             return;
         }
         Ray ray = Camera.main.ScreenPointToRay(InputManager.MousePos);
 
         Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 8);
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
 
-        unit.DoAction(hit.point);
+        unit.DoAction(new Vector2(hit.point.x, hit.point.z));
+
         unit.AlreadyUsedAction = true;
         unit.AlreadyMoved = true;
     }

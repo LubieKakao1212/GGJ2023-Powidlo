@@ -46,7 +46,7 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-    public abstract void DoAction(Vector3 worldCursor);
+    public abstract void DoAction(Vector2 worldCursor);
 
     public void Move(Vector3 delta)
     {
