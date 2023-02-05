@@ -111,6 +111,8 @@ public class Player : MonoBehaviour
         pUnit.SwitchMaterial(pUnit.NormalMaterial);
         cUnit.SwitchMaterial(cUnit.SelectedMateria);*/
 
+        CurrentUnit.OnSelected();
+
         SelectedUnitChanged?.Invoke();
     }
 

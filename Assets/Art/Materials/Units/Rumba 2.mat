@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-724556850247970378
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProjectorSelected
+  m_Name: Rumba 2
   m_Shader: {fileID: -6465566751694194690, guid: 4cf42a802a579a240a4fbe80ad845dfb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -34,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Back:
-        m_Texture: {fileID: 2800000, guid: 5ee9c05426ca75f4b9329e2c8dc8a51f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ba916536331867408e5efe6bf21e097, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Back_1:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5ee9c05426ca75f4b9329e2c8dc8a51f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -66,11 +53,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Front:
-        m_Texture: {fileID: 2800000, guid: 9055b2c7993f1bc488261dbecfba0582, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ba916536331867408e5efe6bf21e097, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Front_1:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9055b2c7993f1bc488261dbecfba0582, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -90,11 +77,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Side:
-        m_Texture: {fileID: 2800000, guid: 4cbe4769f9e346d45a59f1a8000251cc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ba916536331867408e5efe6bf21e097, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Side_1:
-        m_Texture: {fileID: 2800000, guid: cbb76a9f88af51949b6abbec8c3d9219, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -102,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top:
-        m_Texture: {fileID: 2800000, guid: 72e070ef7e74cbe4eba90bd66e64409e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0c9b6793f0f45d44e915efa14c4674af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top_1:
@@ -156,8 +143,21 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Size: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _Size: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _TeamColor: {r: 1, g: 0.7525196, b: 0, a: 0}
-    - _Tint: {r: 0, g: 0.1451273, b: 1, a: 1}
+    - _TeamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &8466187541840263098
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

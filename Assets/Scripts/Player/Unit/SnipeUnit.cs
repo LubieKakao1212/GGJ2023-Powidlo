@@ -20,4 +20,14 @@ public class SnipeUnit : Unit
 
         transform.rotation = Quaternion.LookRotation(dir.normalized, Vector3.up);
     }
+
+    public override void Move(Vector3 delta)
+    {
+        base.Move(delta);
+    }
+
+    public override void OnSelected()
+    {
+        base.OnSelected();
+    }
 }
