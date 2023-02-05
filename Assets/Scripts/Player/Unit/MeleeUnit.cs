@@ -17,11 +17,19 @@ public class MeleeUnit : Unit
         SkipNextTurn();
     }
 
-    public override void Move(Vector3 delta)
+    public override bool Move(Vector3 delta)
     {
-        base.Move(delta);
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumMove", GetComponent<Transform>().position);
+       
+
+        if (base.Move(delta)) 
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumMove", GetComponent<Transform>().position);
+
+            return true;
+        }
+        return false;
+
     }
 
     public override void OnSelected()

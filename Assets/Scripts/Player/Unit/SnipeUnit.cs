@@ -21,11 +21,17 @@ public class SnipeUnit : Unit
         transform.rotation = Quaternion.LookRotation(dir.normalized, Vector3.up);
     }
 
-    public override void Move(Vector3 delta)
+    public override bool Move(Vector3 delta)
     {
-        base.Move(delta);
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserMove", GetComponent<Transform>().position);
+        if (base.Move(delta))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserMove", GetComponent<Transform>().position);
+
+            return true;
+        }
+        return false;
+
     }
 
     public override void OnSelected()
