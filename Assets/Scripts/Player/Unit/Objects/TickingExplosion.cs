@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 using static DamageUtil;
 
 public class TickingExplosion : TickingAttack
@@ -15,14 +16,20 @@ public class TickingExplosion : TickingAttack
     [SerializeField]
     private bool damageOnStartup;
 
+    [SerializeField]
+    private VisualEffect effect;
+
+    [SerializeField]
+    private GameObject visuals;
+
     private bool initialising;
 
     protected override void Start()
     {
         base.Start();
-        Vector3 s = transform.localScale;
-        transform.localScale = Vector3.zero;
-        LeanTween.scale(gameObject, s, 0.5f).setEaseOutBack().setOvershoot(0.5f);
+        Vector3 s = visuals.transform.localScale;
+        visuals.transform.localScale = Vector3.zero;
+        LeanTween.scale(visuals, s, 0.5f).setEaseOutBack().setOvershoot(0.5f);
         initialising = true;
         if(damageOnStartup) {
             Explode();
@@ -41,7 +48,15 @@ public class TickingExplosion : TickingAttack
 
         if (!initialising)
         {
-            LeanTween.scale(gameObject, Vector3.zero, 0.5f).setOnComplete(() => Destroy(gameObject)).setEaseInBack().setOvershoot(0.5f);
+            LeanTween.scale(visuals, Vector3.zero, 0.5f).setOnComplete(() => 
+            {
+                effect.SendEvent("Burst");
+                Destroy(gameObject, 5f);
+            }).setEaseInBack().setOvershoot(0.5f);
+        }
+        else
+        {
+            effect.SendEvent("Burst");
         }
         return true;
     }
