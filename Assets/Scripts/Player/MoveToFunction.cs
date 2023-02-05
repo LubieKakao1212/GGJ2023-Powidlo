@@ -99,7 +99,7 @@ public class MoveToFunction : MonoBehaviour
         }
         else
         {
-            //Play Sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/OutOfBounds", GetComponent<Transform>().position);
         }
     }
 }

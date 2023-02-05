@@ -9,6 +9,8 @@ public class SnipeUnit : Unit
 
     public override void DoAction(Vector2 worldCursor)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
+
         var laser = Instantiate(laserPrefab);
         laser.playerId = playerId;
 
@@ -21,15 +23,21 @@ public class SnipeUnit : Unit
 
     public override bool Move(Vector3 delta)
     {
+
         if (base.Move(delta))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserMove", GetComponent<Transform>().position);
+
             return true;
         }
         return false;
+
     }
 
     public override void OnSelected()
     {
         base.OnSelected();
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserSelect", GetComponent<Transform>().position);
     }
 }

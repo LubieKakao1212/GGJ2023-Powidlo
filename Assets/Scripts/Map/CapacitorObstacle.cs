@@ -43,6 +43,8 @@ public class CapacitorObstacle : Obstacle
         {
             var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             explosion.playerId = int.MinValue;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CapacitorHit", GetComponent<Transform>().position);
         }
         discharged = true;
 

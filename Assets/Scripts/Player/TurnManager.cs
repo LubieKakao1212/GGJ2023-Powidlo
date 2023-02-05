@@ -38,6 +38,8 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RoundSwap", GetComponent<Transform>().position);
+        
         //moveManager.DisabeControl();
         ResetClock();
 
@@ -80,6 +82,8 @@ public class TurnManager : MonoBehaviour
         {
             isOverTime= true;
             clock.color = Color.red;
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", 1);
         }
     }
 
@@ -87,6 +91,8 @@ public class TurnManager : MonoBehaviour
     {
         currentTime = 0;
         clock.color = Color.white;
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", 0);
         isOverTime = false;
     }
 
