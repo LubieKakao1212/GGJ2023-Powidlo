@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -18,13 +19,31 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private List<Player> players;
 
+    [SerializeField]
+    private float maxTurnTime;
+    [SerializeField]
+    private float overTime;
+    private bool isOverTime;
+
+    [SerializeField]
+    private TextMeshProUGUI clock;
+
+    [SerializeField]
+    private GameObject board;
+
+    private float currentTime = 0;
+
     private int currentPlayerIndex;
 
     public void NextTurn()
     {
         //moveManager.DisabeControl();
+        ResetClock();
+
         currentPlayerIndex = (++currentPlayerIndex) % players.Count;
-        
+
+        LeanTween.rotateY(board, 180f * currentPlayerIndex, 1f);
+
         CurrentPlayer.DisabeControl();
         CurrentPlayer.SelectedUnitChanged -= OnPlayerUnitChanged;
 
@@ -33,8 +52,33 @@ public class TurnManager : MonoBehaviour
         CurrentPlayer.EnableControl();
         CurrentPlayer.SelectedUnitChanged += OnPlayerUnitChanged;
         moveManager.SetTarget(CurrentPlayer.CurrentUnit);
-
+        
         TurnPasses?.Invoke();
+    }
+
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+
+        if (currentTime > maxTurnTime) 
+        {
+            NextTurn(); 
+        }
+
+        float timeleft = (maxTurnTime - currentTime);
+
+        clock.text = timeleft.ToString("00");
+        if (!isOverTime && timeleft < overTime)
+        {
+            isOverTime= true;
+            clock.color = Color.red;
+        }
+    }
+
+    private void ResetClock()
+    {
+        currentTime = 0;
+        clock.color = Color.white;
     }
 
     private void Start()

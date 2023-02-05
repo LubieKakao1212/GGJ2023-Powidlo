@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08fd8da29ea5d94e8068a05d26e81dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 0
-  size: 3
   timer: 2
+  playerId: 0
+  damage: 5
+  size: 3
+  isRanged: 0
+  damageOnStartup: 1
 --- !u!23 &3342736444874782818
 MeshRenderer:
   m_ObjectHideFlags: 0
