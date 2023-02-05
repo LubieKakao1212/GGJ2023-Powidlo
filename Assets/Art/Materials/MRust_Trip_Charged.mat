@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MRust_Trip
+  m_Name: MRust_Trip_Charged
   m_Shader: {fileID: -6465566751694194690, guid: ec04d5cc4b46c7242b9bb5238e188543, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
