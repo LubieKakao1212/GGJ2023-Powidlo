@@ -410,6 +410,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1400786745503551318, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400786745503551318, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79596305
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400786745503551318, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441739047043859905, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79596305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341105984964642209, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79596305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035330468754735681, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79596305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
 --- !u!4 &35668610 stripped
