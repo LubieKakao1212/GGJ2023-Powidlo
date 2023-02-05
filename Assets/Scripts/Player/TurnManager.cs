@@ -74,6 +74,8 @@ public class TurnManager : MonoBehaviour
         {
             isOverTime= true;
             clock.color = Color.red;
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", 1);
         }
     }
 
@@ -81,6 +83,8 @@ public class TurnManager : MonoBehaviour
     {
         currentTime = 0;
         clock.color = Color.white;
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", 0);
     }
 
     private void Start()

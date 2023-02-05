@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111814258849083
+  lastModified: 638111823408987021
   FileSizes:
   - Name: Desktop
-    Value: 2565344
+    Value: 2443808
   Exists: 1
 --- !u!114 &-8098830455476468199
 MonoBehaviour:
@@ -329,10 +329,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111814258869333
+  lastModified: 638111823409006769
   FileSizes:
   - Name: Desktop
-    Value: 1980
+    Value: 1934
   Exists: 1
 --- !u!114 &-2624270647938691963
 MonoBehaviour:
@@ -388,7 +388,7 @@ MonoBehaviour:
   - {fileID: -4412880927624469179}
   MinDistance: 1
   MaxDistance: 20
-  Length: 2560
+  Length: 2529
 --- !u!114 &-1147714953922561205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,10 +437,10 @@ MonoBehaviour:
     data1: 2846165144
     data2: 3811022459
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
-  - Time
-  - Countdown
+  - 0
+  - 1
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -477,16 +477,16 @@ MonoBehaviour:
   - {fileID: -7447279137361705439}
   - {fileID: 8915553111702806293}
   - {fileID: 8036204306998189641}
-  - {fileID: 6022027525197440740}
   EditorParameters:
   - {fileID: -5462125040560093001}
   - {fileID: 4702719204937461422}
   - {fileID: 5388928928203631386}
+  - {fileID: 2564503936774152165}
   MasterBanks:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638111814258869333
+  cacheTime: 638111823409006769
   cacheVersion: 131601
 --- !u!114 &2413854149730983569
 MonoBehaviour:
@@ -513,6 +513,32 @@ MonoBehaviour:
   Labels:
   - No
   - Yes
+  Exists: 1
+--- !u!114 &2564503936774152165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Countdown
+  m_EditorClassIdentifier: 
+  Name: Countdown
+  StudioPath: parameter:/Countdown
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2846165144
+    data2: 3811022459
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - 0
+  - 1
   Exists: 1
 --- !u!114 &2930183078718006195
 MonoBehaviour:
@@ -569,32 +595,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1855
---- !u!114 &3604468845455910500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ElectricExplosionINIT/Explosion
-  m_EditorClassIdentifier: 
-  Name: Explosion
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 532326151
-    data2: 636398245
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - No
-  - Yes
-  Exists: 1
 --- !u!114 &4087454295032813653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,34 +703,6 @@ MonoBehaviour:
   - 1
   - 2
   Exists: 1
---- !u!114 &6022027525197440740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ElectricExplosionINIT
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ElectricExplosionINIT
-  Guid:
-    Data1: 332255286
-    Data2: 1233845072
-    Data3: -2064146762
-    Data4: 2078623455
-  Banks:
-  - {fileID: -8254411535350237553}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3604468845455910500}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
 --- !u!114 &7876099934906846691
 MonoBehaviour:
   m_ObjectHideFlags: 0
