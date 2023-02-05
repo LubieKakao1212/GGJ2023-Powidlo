@@ -5176,9 +5176,9 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2064638785}
-    - target: {fileID: 2601146895667413136, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
-      propertyPath: startDisabled
-      value: 0
+    - target: {fileID: 3743871845705489389, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
+      propertyPath: segments.Array.size
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}

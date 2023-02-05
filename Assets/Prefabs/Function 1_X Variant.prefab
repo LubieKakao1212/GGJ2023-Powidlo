@@ -367,9 +367,13 @@ PrefabInstance:
       value: Function 1_X Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2681200611761065709, guid: f7b39288eb2d7e64384b2bf51fdec56f, type: 3}
+      propertyPath: segments.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681200611761065709, guid: f7b39288eb2d7e64384b2bf51fdec56f, type: 3}
       propertyPath: segments.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 120806417302509940}
     - target: {fileID: 2681200612079251525, guid: f7b39288eb2d7e64384b2bf51fdec56f, type: 3}
       propertyPath: bounds.x
       value: 0

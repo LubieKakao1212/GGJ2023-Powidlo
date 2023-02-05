@@ -77,11 +77,14 @@ public class MoveToFunction : MonoBehaviour
 
     private void UpdatePointer(Vector2 pos)
     {
-        Ray ray = Camera.main.ScreenPointToRay(pos);
+        if (target != null)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(pos);
 
-        Physics.Raycast(ray,out RaycastHit hit, Mathf.Infinity);
+            Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity);
 
-        lastPos = controller.UpdateControl((hit.point - target.transform.position).XZToXY());
+            lastPos = controller.UpdateControl((hit.point - target.transform.position).XZToXY());
+        }
     }
     
     private void Move()
