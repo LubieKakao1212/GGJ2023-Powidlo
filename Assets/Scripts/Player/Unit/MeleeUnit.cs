@@ -20,10 +20,14 @@ public class MeleeUnit : Unit
     public override void Move(Vector3 delta)
     {
         base.Move(delta);
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumMove", GetComponent<Transform>().position);
     }
 
     public override void OnSelected()
     {
         base.OnSelected();
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumSelect", GetComponent<Transform>().position);
     }
 }

@@ -99,9 +99,6 @@
 		<property name="timelockedOffset">
 			<value>0.064453125</value>
 		</property>
-		<property name="volume">
-			<value>-7</value>
-		</property>
 		<relationship name="modulators">
 			<destination>{590e6f91-df31-4516-8fd8-c34dc5d45990}</destination>
 		</relationship>

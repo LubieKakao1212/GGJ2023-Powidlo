@@ -24,10 +24,14 @@ public class SnipeUnit : Unit
     public override void Move(Vector3 delta)
     {
         base.Move(delta);
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserMove", GetComponent<Transform>().position);
     }
 
     public override void OnSelected()
     {
         base.OnSelected();
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/MrLaserSelect", GetComponent<Transform>().position);
     }
 }
