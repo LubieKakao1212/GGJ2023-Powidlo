@@ -15,9 +15,13 @@ public class MeleeUnit : Unit
         SkipNextTurn();
     }
 
-    public override void Move(Vector3 delta)
+    public override bool Move(Vector3 delta)
     {
-        base.Move(delta);
+        if (base.Move(delta)) 
+        {
+            return true;
+        }
+        return false;
     }
 
     public override void OnSelected()
