@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638112014663966300
+  lastModified: 638112043297262558
   FileSizes:
   - Name: Desktop
-    Value: 2738272
+    Value: 2741920
   Exists: 1
 --- !u!114 &-8098830455476468199
 MonoBehaviour:
@@ -381,10 +381,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638112014663986140
+  lastModified: 638112043297282638
   FileSizes:
   - Name: Desktop
-    Value: 2110
+    Value: 2152
   Exists: 1
 --- !u!114 &-2624270647938691963
 MonoBehaviour:
@@ -530,6 +530,7 @@ MonoBehaviour:
   - {fileID: 8915553111702806293}
   - {fileID: 8036204306998189641}
   - {fileID: 1812404177943536284}
+  - {fileID: 1678532720419540564}
   EditorParameters:
   - {fileID: -5462125040560093001}
   - {fileID: 4702719204937461422}
@@ -540,8 +541,35 @@ MonoBehaviour:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638112014663986140
+  cacheTime: 638112043297282638
   cacheVersion: 131601
+--- !u!114 &1678532720419540564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/SimpleClick
+  m_EditorClassIdentifier: 
+  Path: event:/UI/SimpleClick
+  Guid:
+    Data1: -606261157
+    Data2: 1150587296
+    Data3: -685706346
+    Data4: 1956609549
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1812404177943536284
 MonoBehaviour:
   m_ObjectHideFlags: 0
