@@ -15,15 +15,22 @@ public class TickingExplosion : TickingAttack
     [SerializeField]
     private bool damageOnStartup;
 
+    private bool initialising;
+
     protected override void Start()
     {
         base.Start();
+        Vector3 s = transform.localScale;
+        transform.localScale = Vector3.zero;
+        LeanTween.scale(gameObject, s, 0.5f).setEaseOutBack().setOvershoot(0.5f);
+        initialising = true;
         if(damageOnStartup) {
             Explode();
         }
+        initialising = false;
     }
 
-    protected override void Explode()
+    protected override bool Explode()
     {
         Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f);
 
@@ -31,5 +38,11 @@ public class TickingExplosion : TickingAttack
         {
             DealDamage(obj, playerId, damage, isRanged);
         }
+
+        if (!initialising)
+        {
+            LeanTween.scale(gameObject, Vector3.zero, 0.5f).setOnComplete(() => Destroy(gameObject)).setEaseInBack().setOvershoot(0.5f);
+        }
+        return true;
     }
 }

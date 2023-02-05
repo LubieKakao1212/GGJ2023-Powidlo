@@ -16,11 +16,13 @@ public abstract class Ticking : MonoBehaviour
     {
         if (--timer <= 0)
         {
-            Explode();
-            Destroy(gameObject);
+            if (!Explode())
+            {
+                Destroy(gameObject);
+            }
             TurnManager.TurnPasses -= Tick;
         }
     }
 
-    protected abstract void Explode();
+    protected abstract bool Explode();
 }
