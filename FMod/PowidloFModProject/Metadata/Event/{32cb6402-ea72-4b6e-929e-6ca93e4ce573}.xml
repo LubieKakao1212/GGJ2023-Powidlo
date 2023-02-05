@@ -102,9 +102,6 @@
 		<property name="timelockedOffset">
 			<value>0.2109375</value>
 		</property>
-		<property name="volume">
-			<value>6.5</value>
-		</property>
 		<relationship name="fadeInCurve">
 			<destination>{4e133797-1660-4974-ab46-f502661eeb9d}</destination>
 		</relationship>

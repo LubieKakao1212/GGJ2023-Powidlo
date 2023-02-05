@@ -37,6 +37,8 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RoundSwap", GetComponent<Transform>().position);
+        
         //moveManager.DisabeControl();
         ResetClock();
 
