@@ -22,6 +22,9 @@ public class TickingExplosion : TickingAttack
     [SerializeField]
     private GameObject visuals;
 
+    [SerializeField]
+    private string soundEvent;
+
     private bool initialising;
 
     protected override void Start()

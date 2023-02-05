@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
 
     public void NextUnit()
     {
+        if (units.Count == 0)
+        {
+            TurnManager.Instance.RemovePlayer(this);
+            return;
+        }
         int previous = unit++;
         unit = unit % units.Count;
 
@@ -51,6 +56,12 @@ public class Player : MonoBehaviour
 
     public void PreviousUnit()
     {
+        if (units.Count == 0)
+        {
+            TurnManager.Instance.RemovePlayer(this);
+            return;
+        }
+
         int previous = unit--;
 
         if (unit < 0)
