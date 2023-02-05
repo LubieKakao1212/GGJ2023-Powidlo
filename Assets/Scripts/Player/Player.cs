@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public event Action SelectedUnitChanged;
 
-    public Unit CurrentUnit => units[unit];
+    public Unit CurrentUnit => units[unit % units.Count];
 
     [SerializeField]
     private List<Unit> units;
@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
 
     public void NextUnit()
     {
+        if (units.Count == 0)
+        {
+            TurnManager.Instance.RemovePlayer(this);
+            return;
+        }
         int previous = unit++;
         unit = unit % units.Count;
 
@@ -51,6 +56,12 @@ public class Player : MonoBehaviour
 
     public void PreviousUnit()
     {
+        if (units.Count == 0)
+        {
+            TurnManager.Instance.RemovePlayer(this);
+            return;
+        }
+
         int previous = unit--;
 
         if (unit < 0)
@@ -73,8 +84,9 @@ public class Player : MonoBehaviour
 
         Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 8);
 
-        unit.DoAction(hit.point);
+        unit.DoAction(new Vector2(hit.point.x, hit.point.z));
         unit.AlreadyUsedAction = true;
+        unit.AlreadyMoved = true;
     }
 
     public void KillUnit(Unit unit)
@@ -101,11 +113,13 @@ public class Player : MonoBehaviour
 
     private void SelectUnit(int previous)
     {
-        var cUnit = CurrentUnit;
+        /*var cUnit = CurrentUnit;
         var pUnit = units[previous];
 
         pUnit.SwitchMaterial(pUnit.NormalMaterial);
-        cUnit.SwitchMaterial(cUnit.SelectedMateria);
+        cUnit.SwitchMaterial(cUnit.SelectedMateria);*/
+
+        CurrentUnit.OnSelected();
 
         SelectedUnitChanged?.Invoke();
     }

@@ -7,11 +7,29 @@ public class SnipeUnit : Unit
     [SerializeField]
     private Laser laserPrefab;
 
-    public override void DoAction(Vector3 worldCursor)
+    public override void DoAction(Vector2 worldCursor)
     {
         var laser = Instantiate(laserPrefab);
         laser.playerId = playerId;
 
-        laser.Prime(new Ray(transform.position, worldCursor - transform.position));
+        var dir = worldCursor.XYToXZ() - transform.position.XZToXY().XYToXZ();
+
+        laser.Prime(new Ray(transform.position, dir));
+
+        transform.rotation = Quaternion.LookRotation(dir.normalized, Vector3.up);
+    }
+
+    public override bool Move(Vector3 delta)
+    {
+        if (base.Move(delta))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public override void OnSelected()
+    {
+        base.OnSelected();
     }
 }

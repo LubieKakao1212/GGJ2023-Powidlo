@@ -22,6 +22,7 @@ public class ObstacleManager : MonoBehaviour
         for (int i = 0; i < count; i++) 
         {
             int r = Random.Range(0, obstacles.Count - i);
+            bool flag = false;
             for(int j = 0; j < i; j++)
             {
                 if (r >= selected[j])
@@ -30,8 +31,15 @@ public class ObstacleManager : MonoBehaviour
                 }
                 else
                 {
+                    flag = true;
+                    selected.Insert(j, r);
                     break;
                 }
+            }
+
+            if (!flag)
+            {
+                selected.Add(r);
             }
         }
 
@@ -39,7 +47,7 @@ public class ObstacleManager : MonoBehaviour
 
         for (int i = 0; i < obstacles.Count; i++)
         {
-            if (selected[k] == i)
+            if (k < count && selected[k] == i)
             {
                 k++;
             }

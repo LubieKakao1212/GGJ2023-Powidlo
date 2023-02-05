@@ -13,6 +13,9 @@ public class FunctionController : MonoBehaviour
     private LineRenderer displayControl;
 
     [SerializeField]
+    private GameObject indicator;
+
+    [SerializeField]
     private float distance;
 
     [field: SerializeField]
@@ -29,11 +32,14 @@ public class FunctionController : MonoBehaviour
     [SerializeField]
     private float controlUpdateMinStep;
 
-    public Vector2 UpdateControl(Vector2 position)
+    [SerializeField]
+    private float sensitivity;
+
+    public Vector2? UpdateControl(Vector2 position)
     {
         IFunction func = GetFunction();
 
-        displayControl.positionCount = 2;
+        //displayControl.positionCount = 2;
 
         float x = position.x;
         Vector2 pointOnCurve = new Vector2(x, func.Function(x));
@@ -48,11 +54,23 @@ public class FunctionController : MonoBehaviour
 
         Vector2 p = m1 < m2 ? p1 : p2;
 
-        Vector3[] positions = new Vector3[] { position.XYToXZ(), p.XYToXZ() };
+        //Vector3[] positions = new Vector3[] { position.XYToXZ(), p.XYToXZ() };
 
-        displayControl.SetPositions(positions);
+        //displayControl.SetPositions(positions);
 
-        return p;
+        //Is the cursor approximatly on the curve
+        if ((m1 < sensitivity || m2 < sensitivity) && bounds.Contains(p))
+        {
+            indicator.SetActive(true);
+            indicator.transform.localPosition = p.XYToXZ();
+            return p;
+        }
+        else
+        {
+            indicator.SetActive(false);
+        }
+
+        return null;
     }
 
     [ContextMenu("Generate")]
@@ -95,7 +113,7 @@ public class FunctionController : MonoBehaviour
     private void Start()
     {
         Generate();
-        displayControl.positionCount = 2;
+        //displayControl.positionCount = 2;
     }
 
     
