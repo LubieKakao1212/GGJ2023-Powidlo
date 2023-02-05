@@ -20,7 +20,7 @@ public class Laser : TickingAttack
             var col = hit.collider;
             endPoint = hit.point;
 
-            DealDamage(col, playerId, damage, true);
+            DealDamage(col, playerId, damage, true, false);
         }
         laserLine.positionCount = 2;
         laserLine.SetPositions(new Vector3[] { ray.origin, endPoint });

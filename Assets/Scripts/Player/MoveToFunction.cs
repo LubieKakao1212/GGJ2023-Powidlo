@@ -28,6 +28,8 @@ public class MoveToFunction : MonoBehaviour
         this.controller = controller;
         controller.transform.position = target.transform.position;
 
+        controller.bounds = target.GetMovementBounds();
+
         controller.Generate();
 
         UpdatePointer(InputManager.MousePos);

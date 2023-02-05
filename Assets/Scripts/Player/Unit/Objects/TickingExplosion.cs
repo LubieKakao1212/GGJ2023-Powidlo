@@ -25,6 +25,9 @@ public class TickingExplosion : TickingAttack
     [SerializeField]
     private string soundEvent;
 
+    [SerializeField]
+    private bool inflictStun;
+
     private bool initialising;
 
     protected override void Start()
@@ -46,7 +49,7 @@ public class TickingExplosion : TickingAttack
 
         foreach (var obj in objects)
         {
-            DealDamage(obj, playerId, damage, isRanged);
+            DealDamage(obj, playerId, damage, isRanged, inflictStun);
         }
 
         if (!initialising)

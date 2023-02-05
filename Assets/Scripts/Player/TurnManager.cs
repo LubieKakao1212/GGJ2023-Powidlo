@@ -60,6 +60,7 @@ public class TurnManager : MonoBehaviour
     public void RemovePlayer(Player player)
     {
         players.Remove(player);
+        //Will not work with more players
         Debug.Log("You won!!");
     }
 
@@ -86,6 +87,7 @@ public class TurnManager : MonoBehaviour
     {
         currentTime = 0;
         clock.color = Color.white;
+        isOverTime = false;
     }
 
     private void Start()

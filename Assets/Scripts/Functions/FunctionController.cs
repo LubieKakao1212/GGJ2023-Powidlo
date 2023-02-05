@@ -22,7 +22,7 @@ public class FunctionController : MonoBehaviour
     public float pointDensity { get; private set; }
 
     [field: SerializeField]
-    public Rect bounds { get; private set; }
+    public Rect bounds { get; set; }
     
     [SerializeField]
     private GameObject functionProvider;
