@@ -12,6 +12,7 @@ public class MovementManager : MonoBehaviour
 
     private Dictionary<MovementFunctionType, FunctionController> functionsByType;
 
+    [SerializeField]
     private List<FunctionController> functionsByOrder;
 
     private bool isEnabled;
