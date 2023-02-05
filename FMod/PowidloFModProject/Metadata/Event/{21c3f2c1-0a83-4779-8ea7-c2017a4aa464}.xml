@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{732459da-343b-4dbf-a3f0-dee0d8588e44}">
+		<relationship name="masters">
+			<destination>{892e0347-519e-47b4-b4cc-e0e6e9819a29}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{0994f3b8-afe6-41ef-8861-b22bcd52f8b5}</destination>
 		</relationship>
@@ -94,6 +97,9 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>0.0625</value>
+		</property>
+		<property name="volume">
+			<value>6.5</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{c2ead29a-b0eb-4d90-bf52-72eb44abeab4}</destination>

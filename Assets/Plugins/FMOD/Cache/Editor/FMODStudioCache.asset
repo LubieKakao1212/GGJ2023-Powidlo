@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111837828644017
+  lastModified: 638111942468851201
   FileSizes:
   - Name: Desktop
-    Value: 2443808
+    Value: 2000704
   Exists: 1
 --- !u!114 &-8098830455476468199
 MonoBehaviour:
@@ -329,7 +329,7 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111837828658587
+  lastModified: 638111942468871013
   FileSizes:
   - Name: Desktop
     Value: 1934
@@ -486,7 +486,7 @@ MonoBehaviour:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638111837828658587
+  cacheTime: 638111942468871013
   cacheVersion: 131601
 --- !u!114 &2413854149730983569
 MonoBehaviour:
@@ -676,7 +676,7 @@ MonoBehaviour:
   - {fileID: 2413854149730983569}
   MinDistance: 1
   MaxDistance: 20
-  Length: 90429
+  Length: 45176
 --- !u!114 &5388928928203631386
 MonoBehaviour:
   m_ObjectHideFlags: 0
