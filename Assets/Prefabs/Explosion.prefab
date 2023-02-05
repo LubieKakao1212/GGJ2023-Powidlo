@@ -137,6 +137,7 @@ MonoBehaviour:
   damageOnStartup: 1
   effect: {fileID: 5621724183840017988}
   visuals: {fileID: 78379914138248207}
+  soundEvent: event:/SFX/ElectricExplosion
 --- !u!1 &6695058700951371551
 GameObject:
   m_ObjectHideFlags: 0
