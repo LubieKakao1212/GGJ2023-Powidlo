@@ -11,7 +11,7 @@ public class MoveToFunction : MonoBehaviour
     [SerializeField]
     private FunctionController controller;
 
-    private Vector2 lastPos;
+    private Vector2? lastPos;
 
     [SerializeField]
     private bool startDisabled;
@@ -84,9 +84,10 @@ public class MoveToFunction : MonoBehaviour
     
     private void Move()
     {
-        if (controller.bounds.Contains(lastPos))
+        var v = lastPos.GetValueOrDefault();
+        if (lastPos.HasValue && controller.bounds.Contains(v))
         {
-            target.Move(new Vector3(lastPos.x, 0f, lastPos.y));
+            target.Move(new Vector3(v.x, 0f, v.y));
             controller.transform.position = target.transform.position;
 
             UpdatePointer();

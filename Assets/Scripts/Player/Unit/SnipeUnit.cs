@@ -7,12 +7,12 @@ public class SnipeUnit : Unit
     [SerializeField]
     private Laser laserPrefab;
 
-    public override void DoAction(Vector3 worldCursor)
+    public override void DoAction(Vector2 worldCursor)
     {
         var laser = Instantiate(laserPrefab);
         laser.playerId = playerId;
 
-        var dir = worldCursor - transform.position;
+        var dir = worldCursor.XYToXZ() - transform.position.XZToXY().XYToXZ();
 
         laser.Prime(new Ray(transform.position, dir));
 

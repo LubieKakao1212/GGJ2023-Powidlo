@@ -7,7 +7,7 @@ public class MeleeUnit : Unit
     [SerializeField]
     private TickingExplosion explosion;
 
-    public override void DoAction(Vector3 worldCursor)
+    public override void DoAction(Vector2 worldCursor)
     {
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         expl.playerId = playerId;

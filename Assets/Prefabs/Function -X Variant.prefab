@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1555808049331891561, guid: 07985b439af21f6419558d370df06070, type: 3}
       propertyPath: m_Name
-      value: Function -X
+      value: Function -X Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1555808049331891567, guid: 07985b439af21f6419558d370df06070, type: 3}
       propertyPath: segments.Array.data[1]
@@ -63,9 +63,21 @@ PrefabInstance:
       propertyPath: a
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 2244536995346802931, guid: 07985b439af21f6419558d370df06070, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244536995346802931, guid: 07985b439af21f6419558d370df06070, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3471927637038715846, guid: 07985b439af21f6419558d370df06070, type: 3}
       propertyPath: <Type>k__BackingField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157874977250447687, guid: 07985b439af21f6419558d370df06070, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07985b439af21f6419558d370df06070, type: 3}

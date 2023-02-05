@@ -25,7 +25,7 @@ public class TickingExplosion : TickingAttack
 
     protected override void Explode()
     {
-        Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f, 1 << 7);
+        Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f);
 
         foreach (var obj in objects)
         {

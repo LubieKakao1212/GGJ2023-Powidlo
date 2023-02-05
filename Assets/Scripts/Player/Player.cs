@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
         Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 8);
 
-        unit.DoAction(hit.point);
+        unit.DoAction(new Vector2(hit.point.x, hit.point.z));
         unit.AlreadyUsedAction = true;
         unit.AlreadyMoved = true;
     }
