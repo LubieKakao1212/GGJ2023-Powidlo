@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -56,6 +57,12 @@ public class TurnManager : MonoBehaviour
         moveManager.SetTarget(CurrentPlayer.CurrentUnit);
         
         TurnPasses?.Invoke();
+    }
+
+    public void RemovePlayer(Player player)
+    {
+        players.Remove(player);
+        Debug.Log("You won!!");
     }
 
     private void Update()
