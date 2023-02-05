@@ -48,16 +48,17 @@ public abstract class Unit : MonoBehaviour
 
     public abstract void DoAction(Vector2 worldCursor);
 
-    public virtual void Move(Vector3 delta)
+    public virtual bool Move(Vector3 delta)
     {
         if (AlreadyMoved)
         {
             Debug.LogWarning("Cannot move unit that already moved");
-            return;
+            return false;
         }
         transform.position += delta;
         AlreadyMoved = true;
         AlreadyUsedAction = true;
+        return true;
     }
 
     public void SwitchMaterial(Material target)

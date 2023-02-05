@@ -9139,6 +9139,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 7314406395924217949, guid: 64cbeb6f46b90c049a600b64816a7c32, type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7314406396001287693, guid: 64cbeb6f46b90c049a600b64816a7c32, type: 3}
       propertyPath: CameraDistance
       value: 10

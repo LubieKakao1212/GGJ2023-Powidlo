@@ -125,7 +125,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _BorderStrength: 3.06
+    - _BorderStrength: 8
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -159,5 +159,5 @@ Material:
     - _Size: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _TeamColor: {r: 1, g: 0.7525196, b: 0, a: 0}
-    - _Tint: {r: 0, g: 0.1451273, b: 1, a: 1}
+    - _Tint: {r: 0.2971698, g: 0.9607092, b: 1, a: 1}
   m_BuildTextureStacks: []
