@@ -9,6 +9,8 @@ public class MeleeUnit : Unit
 
     public override void DoAction(Vector2 worldCursor)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricExplosion", GetComponent<Transform>().position);
+
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         expl.playerId = playerId;
 

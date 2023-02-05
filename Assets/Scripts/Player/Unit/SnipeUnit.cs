@@ -9,6 +9,8 @@ public class SnipeUnit : Unit
 
     public override void DoAction(Vector2 worldCursor)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
+
         var laser = Instantiate(laserPrefab);
         laser.playerId = playerId;
 

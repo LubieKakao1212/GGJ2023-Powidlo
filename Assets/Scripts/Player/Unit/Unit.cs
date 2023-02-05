@@ -56,7 +56,7 @@ public abstract class Unit : MonoBehaviour
             return;
         }
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricTeleport", GetComponent<Transform>().position);
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricTeleport", GetComponent<Transform>().position);
 
         transform.position += delta;
         AlreadyMoved = true;
