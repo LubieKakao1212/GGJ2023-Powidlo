@@ -26,8 +26,9 @@ public class Laser : TickingAttack
         laserLine.SetPositions(new Vector3[] { ray.origin, endPoint });
     }
 
-    protected override void Explode()
+    protected override bool Explode()
     {
         //Intentional
+        return false;
     }
 }

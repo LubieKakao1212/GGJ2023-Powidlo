@@ -463,10 +463,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1607869194963361962, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
-      propertyPath: <health>k__BackingField
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c43852e91f0ca44699297f5a23fe0ed, type: 3}
 --- !u!4 &35668610 stripped
@@ -9138,10 +9134,6 @@ PrefabInstance:
     - target: {fileID: 7314406395924217936, guid: 64cbeb6f46b90c049a600b64816a7c32, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314406395924217949, guid: 64cbeb6f46b90c049a600b64816a7c32, type: 3}
-      propertyPath: m_RequiresDepthTextureOption
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7314406396001287693, guid: 64cbeb6f46b90c049a600b64816a7c32, type: 3}
       propertyPath: CameraDistance
