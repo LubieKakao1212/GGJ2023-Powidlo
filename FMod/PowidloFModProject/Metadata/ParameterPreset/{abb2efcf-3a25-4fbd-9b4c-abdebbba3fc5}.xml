@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{abb2efcf-3a25-4fbd-9b4c-abdebbba3fc5}">
+		<property name="name">
+			<value>Tura</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d259e108-0e83-4e16-b7df-8ca53b6e827f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{dee8eb24-29c9-46a3-a8c7-6250633b1c14}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{dee8eb24-29c9-46a3-a8c7-6250633b1c14}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>1</value>
+			<value>2</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

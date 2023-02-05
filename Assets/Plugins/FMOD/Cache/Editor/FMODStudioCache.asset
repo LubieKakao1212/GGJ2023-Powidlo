@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111776524819904
+  lastModified: 638111814258849083
   FileSizes:
   - Name: Desktop
-    Value: 2564640
+    Value: 2565344
   Exists: 1
 --- !u!114 &-8098830455476468199
 MonoBehaviour:
@@ -74,6 +74,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 125
+--- !u!114 &-8029962326635843707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/RoundSwap/Tura
+  m_EditorClassIdentifier: 
+  Name: Tura
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 781789843
+    data2: 3761447267
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - 1
+  - 2
+  Exists: 1
 --- !u!114 &-8014401032874421308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +329,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111776524839742
+  lastModified: 638111814258869333
   FileSizes:
   - Name: Desktop
-    Value: 1946
+    Value: 1980
   Exists: 1
 --- !u!114 &-2624270647938691963
 MonoBehaviour:
@@ -455,11 +481,12 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: -5462125040560093001}
   - {fileID: 4702719204937461422}
+  - {fileID: 5388928928203631386}
   MasterBanks:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638111776524839742
+  cacheTime: 638111814258869333
   cacheVersion: 131601
 --- !u!114 &2413854149730983569
 MonoBehaviour:
@@ -537,7 +564,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -8029962326635843707}
   MinDistance: 1
   MaxDistance: 20
   Length: 1855
@@ -649,6 +677,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 90429
+--- !u!114 &5388928928203631386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tura
+  m_EditorClassIdentifier: 
+  Name: Tura
+  StudioPath: parameter:/Tura
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 781789843
+    data2: 3761447267
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - 1
+  - 2
+  Exists: 1
 --- !u!114 &6022027525197440740
 MonoBehaviour:
   m_ObjectHideFlags: 0
