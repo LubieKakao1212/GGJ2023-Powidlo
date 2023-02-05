@@ -48,7 +48,7 @@ public abstract class Unit : MonoBehaviour
 
     public abstract void DoAction(Vector2 worldCursor);
 
-    public void Move(Vector3 delta)
+    public virtual void Move(Vector3 delta)
     {
         if (AlreadyMoved)
         {
@@ -78,6 +78,11 @@ public abstract class Unit : MonoBehaviour
         {
             TurnManager.TurnPasses -= SkipTurn;
         }
+    }
+
+    public virtual void OnSelected()
+    {
+        
     }
 
     private void Start()

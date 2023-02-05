@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: <playerId>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1546398465625760724, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <NormalMaterial>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a769512227b8543be711609f748fd6, type: 2}
+    - target: {fileID: 1546398465625760724, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <SelectedMateria>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: d5c28035a773e1247accaa868a8bfbdc, type: 2}
     - target: {fileID: 1770135225395513117, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -87,6 +95,14 @@ PrefabInstance:
       propertyPath: <playerId>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4835000305189162409, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <NormalMaterial>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e2120b5fb958e040a6af0011f9c50ea, type: 2}
+    - target: {fileID: 4835000305189162409, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <SelectedMateria>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: d945acb9da3fd0e429d92e9ca27cb694, type: 2}
     - target: {fileID: 4863264660306096169, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: <playerId>k__BackingField
       value: 1
@@ -143,6 +159,14 @@ PrefabInstance:
       propertyPath: <playerId>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7599726850470241364, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <NormalMaterial>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a769512227b8543be711609f748fd6, type: 2}
+    - target: {fileID: 7599726850470241364, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <SelectedMateria>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: d5c28035a773e1247accaa868a8bfbdc, type: 2}
     - target: {fileID: 7806835825559717714, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -171,6 +195,14 @@ PrefabInstance:
       propertyPath: <playerId>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7806835825559717726, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <NormalMaterial>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e2120b5fb958e040a6af0011f9c50ea, type: 2}
+    - target: {fileID: 7806835825559717726, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
+      propertyPath: <SelectedMateria>k__BackingField
+      value: 
+      objectReference: {fileID: 2100000, guid: d945acb9da3fd0e429d92e9ca27cb694, type: 2}
     - target: {fileID: 7848804825914203387, guid: b0955625a71dba845a72ba483e2a2670, type: 3}
       propertyPath: <playerId>k__BackingField
       value: 1

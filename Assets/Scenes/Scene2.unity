@@ -3389,18 +3389,6 @@ PrefabInstance:
       propertyPath: startDisabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3708079874294371302, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708079874294371302, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3708079874294371302, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 765ae18d291fe664a8fbd788f4de6145, type: 3}
 --- !u!114 &435870457 stripped

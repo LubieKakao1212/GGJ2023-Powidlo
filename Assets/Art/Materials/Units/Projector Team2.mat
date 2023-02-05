@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProjectorSelected
+  m_Name: Projector Team2
   m_Shader: {fileID: -6465566751694194690, guid: 4cf42a802a579a240a4fbe80ad845dfb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -125,7 +125,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _BorderStrength: 3.06
+    - _BorderStrength: 3
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -158,6 +158,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Size: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _TeamColor: {r: 1, g: 0.7525196, b: 0, a: 0}
-    - _Tint: {r: 0, g: 0.1451273, b: 1, a: 1}
+    - _TeamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
