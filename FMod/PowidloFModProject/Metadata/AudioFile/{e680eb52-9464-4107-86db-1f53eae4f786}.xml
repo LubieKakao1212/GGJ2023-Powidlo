@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e680eb52-9464-4107-86db-1f53eae4f786}">
+		<property name="assetPath">
+			<value>CapacitorExplosionBeepsOnly.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.70530612244897961</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0bf2b09a-66ba-4c62-a516-e9e3ab043ead}</destination>
+		</relationship>
+	</object>
+</objects>

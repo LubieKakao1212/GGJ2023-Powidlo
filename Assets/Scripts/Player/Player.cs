@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
 
         Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 8);
 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
+
         unit.DoAction(hit.point);
         unit.AlreadyUsedAction = true;
         unit.AlreadyMoved = true;

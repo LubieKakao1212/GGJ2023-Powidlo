@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fb1dda80-642d-4fb9-aafb-944d8e3d2810}">
+		<property name="assetPath">
+			<value>EndOfTurnWhoosh.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0114285714285716</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0bf2b09a-66ba-4c62-a516-e9e3ab043ead}</destination>
+		</relationship>
+	</object>
+</objects>

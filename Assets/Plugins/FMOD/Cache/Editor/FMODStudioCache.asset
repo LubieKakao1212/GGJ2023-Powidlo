@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8613882370474971020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Accept
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Accept
+  Guid:
+    Data1: 1329590979
+    Data2: 1104500284
+    Data3: -1152612429
+    Data4: -964451167
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 203
 --- !u!114 &-8254411535350237553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,12 +42,12 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111515837109512
+  lastModified: 638111726338809785
   FileSizes:
   - Name: Desktop
-    Value: 2677120
+    Value: 2559968
   Exists: 1
---- !u!114 &-7913941274508373537
+--- !u!114 &-8098830455476468199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,14 +57,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ElectricTeleport
+  m_Name: event:/UI/ButtonOnHover
   m_EditorClassIdentifier: 
-  Path: event:/SFX/ElectricTeleport
+  Path: event:/UI/ButtonOnHover
   Guid:
-    Data1: -1940525773
-    Data2: 1133774998
-    Data3: 1084478344
-    Data4: 1269901406
+    Data1: 1600291811
+    Data2: 1092939169
+    Data3: 1692567998
+    Data4: 838557927
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 125
+--- !u!114 &-8014401032874421308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/VacuumDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/VacuumDeath
+  Guid:
+    Data1: -1814100152
+    Data2: 1220192479
+    Data3: 1856058265
+    Data4: 1449124672
   Banks:
   - {fileID: -8254411535350237553}
   IsStream: 0
@@ -46,8 +100,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1018
---- !u!114 &-7547851088386869533
+  Length: 875
+--- !u!114 &-7447279137361705439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,23 +111,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TEST_SciFiHit
+  m_Name: event:/SFX/CapacitorExplosion
   m_EditorClassIdentifier: 
-  Path: event:/TEST_SciFiHit
+  Path: event:/SFX/CapacitorExplosion
   Guid:
-    Data1: -612399800
-    Data2: 1160846664
-    Data3: -845423458
-    Data4: 486004130
+    Data1: 146082044
+    Data2: 1148520329
+    Data3: 685909400
+    Data4: 1952481325
   Banks:
   - {fileID: -8254411535350237553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
+  Parameters:
+  - {fileID: -3931706431189918086}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2110
+--- !u!114 &-7049757606363797136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/NoAction
+  m_EditorClassIdentifier: 
+  Path: event:/UI/NoAction
+  Guid:
+    Data1: 852190210
+    Data2: 1265560178
+    Data3: -1452499310
+    Data4: 1944407102
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2673
+  Length: 285
+--- !u!114 &-6519531359641840112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/MrLaserDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/MrLaserDeath
+  Guid:
+    Data1: 1235471128
+    Data2: 1145639257
+    Data3: -948275524
+    Data4: -1176336091
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1250
 --- !u!114 &-5647387601921876871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +209,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1322
 --- !u!114 &-5462125040560093001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +289,32 @@ MonoBehaviour:
   - No
   - Yes
   Exists: 1
+--- !u!114 &-3931706431189918086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CapacitorExplosion/Fire
+  m_EditorClassIdentifier: 
+  Name: Fire
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 630614335
+    data2: 1551815927
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - No
+  - Yes
+  Exists: 1
 --- !u!114 &-3636365243828655003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,12 +330,12 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111515837119431
+  lastModified: 638111726338824668
   FileSizes:
   - Name: Desktop
-    Value: 1492
+    Value: 1900
   Exists: 1
---- !u!114 &-2991314336121699515
+--- !u!114 &-2624270647938691963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,23 +345,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Amb
+  m_Name: event:/Characters/MrLaserSelect
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Amb
+  Path: event:/Characters/MrLaserSelect
   Guid:
-    Data1: 843790897
-    Data2: 1160607721
-    Data3: 1610073225
-    Data4: -1855329580
+    Data1: 262859536
+    Data2: 1224301399
+    Data3: 259666583
+    Data4: -1601414955
   Banks:
   - {fileID: -8254411535350237553}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 56000
+  Length: 956
 --- !u!114 &-2567973719803073470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,22 +459,31 @@ MonoBehaviour:
   - {fileID: -3636365243828655003}
   - {fileID: -8254411535350237553}
   EditorEvents:
-  - {fileID: -7547851088386869533}
-  - {fileID: -7913941274508373537}
   - {fileID: -2567973719803073470}
   - {fileID: 5118532150140430091}
   - {fileID: -1147714953922561205}
   - {fileID: -4789226703830611273}
   - {fileID: 2930183078718006195}
-  - {fileID: -2991314336121699515}
   - {fileID: -5647387601921876871}
+  - {fileID: -7049757606363797136}
+  - {fileID: -2624270647938691963}
+  - {fileID: -6519531359641840112}
+  - {fileID: -8014401032874421308}
+  - {fileID: 8759956613816371079}
+  - {fileID: 7876099934906846691}
+  - {fileID: 3045821549335870997}
+  - {fileID: 4087454295032813653}
+  - {fileID: -8613882370474971020}
+  - {fileID: -8098830455476468199}
+  - {fileID: -7447279137361705439}
+  - {fileID: 8915553111702806293}
   EditorParameters:
   - {fileID: -5462125040560093001}
   MasterBanks:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638111515837119431
+  cacheTime: 638111726338824668
   cacheVersion: 131601
 --- !u!114 &2413854149730983569
 MonoBehaviour:
@@ -394,6 +538,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 10000
   Length: 950
+--- !u!114 &3045821549335870997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RoundSwap
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RoundSwap
+  Guid:
+    Data1: -858508701
+    Data2: 1283186447
+    Data3: 849087144
+    Data4: -1799627951
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1855
+--- !u!114 &4087454295032813653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/VacuumMove
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/VacuumMove
+  Guid:
+    Data1: -756002146
+    Data2: 1116537372
+    Data3: 325457287
+    Data4: 723039379
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1230
 --- !u!114 &5118532150140430091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,4 +620,85 @@ MonoBehaviour:
   - {fileID: 2413854149730983569}
   MinDistance: 1
   MaxDistance: 20
-  Length: 45176
+  Length: 90429
+--- !u!114 &7876099934906846691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/VacuumSelect
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/VacuumSelect
+  Guid:
+    Data1: -1709602976
+    Data2: 1211607209
+    Data3: 1513458362
+    Data4: 558191529
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 381
+--- !u!114 &8759956613816371079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/MrLaserMove
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/MrLaserMove
+  Guid:
+    Data1: -122590889
+    Data2: 1242331679
+    Data3: -1796795234
+    Data4: 564757792
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 833
+--- !u!114 &8915553111702806293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CapacitorBeeps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CapacitorBeeps
+  Guid:
+    Data1: -1618143615
+    Data2: 1226855704
+    Data3: 110163845
+    Data4: 1048543883
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 299

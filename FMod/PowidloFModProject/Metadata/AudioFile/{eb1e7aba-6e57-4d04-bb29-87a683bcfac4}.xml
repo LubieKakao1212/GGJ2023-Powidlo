@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{eb1e7aba-6e57-4d04-bb29-87a683bcfac4}">
+		<property name="assetPath">
+			<value>User Interface, Motion, Hitech GUI, Scifi, Interact, Digital, Glitch 06 SND44947 3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.88</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0bf2b09a-66ba-4c62-a516-e9e3ab043ead}</destination>
+		</relationship>
+	</object>
+</objects>
