@@ -120,6 +120,20 @@ MonoBehaviour:
   <AlreadyUsedAction>k__BackingField: 0
   <SelectedMateria>k__BackingField: {fileID: 2100000, guid: bc1517335e936de4eb243d16b83f251a, type: 2}
   <NormalMaterial>k__BackingField: {fileID: 2100000, guid: f00fe0779a5e3d647a189c4724fc54b6, type: 2}
+  movementBound:
+    serializedVersion: 2
+    x: -2
+    y: -2
+    width: 4
+    height: 4
+  slowedMovementBound:
+    serializedVersion: 2
+    x: -1
+    y: -1
+    width: 2
+    height: 2
   rend: {fileID: 3187573489724537795}
   <health>k__BackingField: 10
+  collisionSize: 0.4
+  isSlowed: 0
   laserPrefab: {fileID: 4265880601856557984, guid: 5d7f062bb3189d64b9e2b0acb8601e1a, type: 3}
