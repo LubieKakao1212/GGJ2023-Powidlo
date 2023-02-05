@@ -22,6 +22,8 @@ public class MainMenu : MonoBehaviour
 
     public void LoadFirstLevel()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicState", 1);
+
         SceneManager.LoadScene(firstLevel);
     }
     public void CharacterSelectOpen()

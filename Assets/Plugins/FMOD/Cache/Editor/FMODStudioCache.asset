@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111942468851201
+  lastModified: 638112014663966300
   FileSizes:
   - Name: Desktop
-    Value: 2000704
+    Value: 2738272
   Exists: 1
 --- !u!114 &-8098830455476468199
 MonoBehaviour:
@@ -261,6 +261,32 @@ MonoBehaviour:
   - Long
   - Short
   Exists: 1
+--- !u!114 &-4876563529886770299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicState
+  m_EditorClassIdentifier: 
+  Name: MusicState
+  StudioPath: parameter:/MusicState
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3669424539
+    data2: 3588829671
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Menu
+  - Transition
+  Exists: 1
 --- !u!114 &-4789226703830611273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +340,32 @@ MonoBehaviour:
   - No
   - Yes
   Exists: 1
+--- !u!114 &-4197814404431854109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicInMenu/MusicState
+  m_EditorClassIdentifier: 
+  Name: MusicState
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3669424539
+    data2: 3588829671
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Menu
+  - Transition
+  Exists: 1
 --- !u!114 &-3636365243828655003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,10 +381,10 @@ MonoBehaviour:
   Path: FMod/PowidloFModProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111942468871013
+  lastModified: 638112014663986140
   FileSizes:
   - Name: Desktop
-    Value: 1934
+    Value: 2110
   Exists: 1
 --- !u!114 &-2624270647938691963
 MonoBehaviour:
@@ -477,17 +529,47 @@ MonoBehaviour:
   - {fileID: -7447279137361705439}
   - {fileID: 8915553111702806293}
   - {fileID: 8036204306998189641}
+  - {fileID: 1812404177943536284}
   EditorParameters:
   - {fileID: -5462125040560093001}
   - {fileID: 4702719204937461422}
   - {fileID: 5388928928203631386}
   - {fileID: 2564503936774152165}
+  - {fileID: -4876563529886770299}
   MasterBanks:
   - {fileID: -8254411535350237553}
   StringsBanks:
   - {fileID: -3636365243828655003}
-  cacheTime: 638111942468871013
+  cacheTime: 638112014663986140
   cacheVersion: 131601
+--- !u!114 &1812404177943536284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MusicInMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MusicInMenu
+  Guid:
+    Data1: -1400836788
+    Data2: 1081753633
+    Data3: -1483559015
+    Data4: 1390036152
+  Banks:
+  - {fileID: -8254411535350237553}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4197814404431854109}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62117
 --- !u!114 &2413854149730983569
 MonoBehaviour:
   m_ObjectHideFlags: 0
