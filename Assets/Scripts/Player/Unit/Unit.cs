@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -29,11 +30,23 @@ public abstract class Unit : MonoBehaviour
     public Material NormalMaterial { get; private set; }
 
     [SerializeField]
+    private Rect movementBound;
+
+    [SerializeField]
+    private Rect slowedMovementBound;
+
+    [SerializeField]
     private MeshRenderer rend;
 
     [field: SerializeField]
     public int health { get; private set; } = 10;
-    
+
+    [SerializeField]
+    private float collisionSize;
+
+    [SerializeField]
+    protected bool isSlowed;
+
     public void Damage(int amount)
     {
         health -= amount;
@@ -50,6 +63,19 @@ public abstract class Unit : MonoBehaviour
 
     public virtual bool Move(Vector3 delta)
     {
+        var targetPos = transform.position + delta;
+
+        var hits = Physics.OverlapSphere(targetPos, collisionSize);
+
+        foreach (var hit in hits)
+        {
+            if ((hit.GetComponent<Unit>() != null || hit.GetComponent<Obstacle>() != null) && hit != GetComponent<Collider>())
+            {
+                //Put sound here
+                return false;
+            }
+        }
+
         if (AlreadyMoved)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
@@ -91,6 +117,11 @@ public abstract class Unit : MonoBehaviour
         
     }
 
+    public virtual Rect GetMovementBounds()
+    {
+        return isSlowed ? slowedMovementBound : movementBound;
+    }
+
     private void Start()
     {
         Owner.SelectedUnitChanged += AdjustMaterial;
@@ -111,5 +142,10 @@ public abstract class Unit : MonoBehaviour
         {
             SwitchMaterial(SelectedMateria);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, collisionSize);
     }
 }

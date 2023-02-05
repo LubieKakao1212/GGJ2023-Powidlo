@@ -62,6 +62,7 @@ public class TurnManager : MonoBehaviour
     public void RemovePlayer(Player player)
     {
         players.Remove(player);
+        //Will not work with more players
         Debug.Log("You won!!");
     }
 
@@ -92,6 +93,7 @@ public class TurnManager : MonoBehaviour
         clock.color = Color.white;
 
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", 0);
+        isOverTime = false;
     }
 
     private void Start()

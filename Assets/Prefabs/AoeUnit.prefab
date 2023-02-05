@@ -136,8 +136,22 @@ MonoBehaviour:
   <AlreadyUsedAction>k__BackingField: 0
   <SelectedMateria>k__BackingField: {fileID: 2100000, guid: a8eefe732864c664e8024e3cf2f8becc, type: 2}
   <NormalMaterial>k__BackingField: {fileID: 2100000, guid: 1c2364d4d03c09546a495b396ece6db3, type: 2}
+  movementBound:
+    serializedVersion: 2
+    x: -2
+    y: -2
+    width: 4
+    height: 4
+  slowedMovementBound:
+    serializedVersion: 2
+    x: -1
+    y: -1
+    width: 2
+    height: 2
   rend: {fileID: 3913061376171680147}
   <health>k__BackingField: 15
+  collisionSize: 0.27
+  isSlowed: 0
   explosion: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
 --- !u!135 &8858949870856073363
 SphereCollider:

@@ -7,6 +7,8 @@ public class MeleeUnit : Unit
     [SerializeField]
     private TickingExplosion explosion;
 
+    private int slowCounter;
+
     public override void DoAction(Vector2 worldCursor)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricExplosion", GetComponent<Transform>().position);
@@ -15,7 +17,11 @@ public class MeleeUnit : Unit
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         expl.playerId = playerId;
 
-        SkipNextTurn();
+        this.isSlowed = true;
+        slowCounter = 2;
+        TurnManager.TurnPasses += DisableSlow;
+
+        //SkipNextTurn();
     }
 
     public override bool Move(Vector3 delta)
@@ -38,5 +44,14 @@ public class MeleeUnit : Unit
         base.OnSelected();
 
         FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumSelect", GetComponent<Transform>().position);
+    }
+
+    private void DisableSlow()
+    {
+        if (slowCounter-- <= 0)
+        {
+            this.isSlowed = false;
+            TurnManager.TurnPasses -= DisableSlow;
+        }
     }
 }

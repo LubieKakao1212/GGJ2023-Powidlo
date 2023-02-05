@@ -138,6 +138,8 @@ PrefabInstance:
     - target: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
       propertyPath: soundEvent
       value: event:/SFX/CapacitorExplosion
+      propertyPath: inflictStun
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
       propertyPath: damageOnStartup
