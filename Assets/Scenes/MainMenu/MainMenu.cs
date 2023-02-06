@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
         mainMenuShade.SetActive(false);
         optionsMenu.SetActive(false);
         characterSelect.SetActive(false);
+        Screen.SetResolution(1920, 1080, true);
     }
 
     public void LoadFirstLevel()

@@ -33,6 +33,7 @@ public class OptionsMenu : MonoBehaviour
         }
 
         HandleResolutions();
+        Screen.SetResolution(1920, 1080, true);
     }
     private void HandleResolutions()
     {
