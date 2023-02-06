@@ -27,5 +27,6 @@ public class ShowControls : MonoBehaviour
     public void GoBackToMainMenu()
     {
         SceneManager.LoadScene(mainMenuScene);
+        Debug.Log("Back to MAin");
     }
 }
