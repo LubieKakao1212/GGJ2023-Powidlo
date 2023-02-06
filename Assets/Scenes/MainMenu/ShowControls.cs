@@ -7,6 +7,7 @@ public class ShowControls : MonoBehaviour
 {
     [SerializeField] GameObject controlsPanel;
     [SerializeField] KeyCode showControlsKey = KeyCode.T;
+    [SerializeField] KeyCode backToMenuKey = KeyCode.Escape;
     [SerializeField] private string mainMenuScene;
     private bool areControlsVisible = false;
 
@@ -22,11 +23,10 @@ public class ShowControls : MonoBehaviour
             controlsPanel.SetActive(areControlsVisible);
             areControlsVisible =! areControlsVisible;
         }
-    }
-
-    public void GoBackToMainMenu()
-    {
-        SceneManager.LoadScene(mainMenuScene);
-        Debug.Log("Back to MAin");
+        if(UnityEngine.Input.GetKeyDown(backToMenuKey))
+        {
+            SceneManager.LoadScene(mainMenuScene);
+            Debug.Log("Back to Main");
+        }
     }
 }
