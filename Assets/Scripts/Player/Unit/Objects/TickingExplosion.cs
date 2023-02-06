@@ -45,6 +45,8 @@ public class TickingExplosion : TickingAttack
 
     protected override bool Explode()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(soundEvent, GetComponent<Transform>().position);
+
         Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f);
 
         foreach (var obj in objects)

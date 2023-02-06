@@ -16,6 +16,18 @@ public class CapacitorObstacle : Obstacle
     [SerializeField]
     public int charge;
 
+    [SerializeField]
+    private Material ChargedMaterial;
+
+    [SerializeField]
+    private Material DischargedMaterial;
+
+    [SerializeField]
+    private MeshRenderer display;
+
+    [SerializeField]
+    private int materialIndex;
+
     private void Start()
     {
         TurnManager.TurnPasses += Recharge;
@@ -31,8 +43,15 @@ public class CapacitorObstacle : Obstacle
         {
             var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             explosion.playerId = int.MinValue;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CapacitorHit", GetComponent<Transform>().position);
         }
         discharged = true;
+
+        var mats = display.materials;
+        mats[materialIndex] = DischargedMaterial;
+        display.materials = mats;
+        
         charge = 0;
     }
 
@@ -43,9 +62,14 @@ public class CapacitorObstacle : Obstacle
             return;
         }
 
-        if (charge++ >= capacitance)
+        if (++charge >= capacitance)
         {
-            discharged = false;
+            discharged = false; 
+            
+            var mats = display.materials;
+            mats[materialIndex] = ChargedMaterial;
+            display.materials = mats;
+
         }
     }
 }

@@ -78,9 +78,14 @@ public abstract class Unit : MonoBehaviour
 
         if (AlreadyMoved)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
+
             Debug.LogWarning("Cannot move unit that already moved");
             return false;
         }
+
+        
+
         transform.position += delta;
         AlreadyMoved = true;
         AlreadyUsedAction = true;
