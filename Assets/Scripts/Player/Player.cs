@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         isEnabled = false;
         InputManager.SelectNextSecondary -= NextUnit;
         InputManager.SelectPreviousSecondary -= PreviousUnit;
-        InputManager.SecondaryAction -= DoUnitAction;
+        InputManager.PrimaryAction -= DoPrimaryAction;
     }
 
     public void EnableControl()
@@ -37,45 +38,49 @@ public class Player : MonoBehaviour
             isEnabled = true;
             InputManager.SelectNextSecondary += NextUnit;
             InputManager.SelectPreviousSecondary += PreviousUnit;
-            InputManager.SecondaryAction += DoUnitAction;
+            InputManager.PrimaryAction += DoPrimaryAction;
         }
     }
 
     public void NextUnit()
     {
-        if (units.Count == 0)
-        {
-            TurnManager.Instance.RemovePlayer(this);
-            return;
-        }
-        int previous = unit++;
-        unit = unit % units.Count;
-
-        SelectUnit(previous);
+        SelectUnit((unit + 1) % units.Count);
     }
 
     public void PreviousUnit()
     {
-        if (units.Count == 0)
+        var u = unit--;
+        if (u < 0)
         {
-            TurnManager.Instance.RemovePlayer(this);
-            return;
+            u = units.Count - 1;
         }
+        SelectUnit(u);
+    }
 
-        int previous = unit--;
+    public void DoPrimaryAction()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(InputManager.MousePos);
+        Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 7);
 
-        if (unit < 0)
+        if (hit.collider != null)
         {
-            unit = units.Count - 1;
+            Unit unit = hit.collider.GetComponent<Unit>();
+            if(unit.Owner == this) {
+                var u = units.IndexOf(unit);
+                if (u < 0)
+                {
+                    Debug.LogException(new IndexOutOfRangeException("Unit not found for player"), unit);
+                    return;
+                }
+                SelectUnit(u);
+            }
         }
-
-        SelectUnit(previous);
     }
 
     public void DoUnitAction()
     {
         var unit = CurrentUnit;
-        if (unit.AlreadyUsedAction)
+        if (unit.AlreadyMoved)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
             return;
@@ -88,7 +93,6 @@ public class Player : MonoBehaviour
 
         unit.DoAction(new Vector2(hit.point.x, hit.point.z));
 
-        unit.AlreadyUsedAction = true;
         unit.AlreadyMoved = true;
     }
 
@@ -114,13 +118,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SelectUnit(int previous)
+    private void SelectUnit(int newUnit)
     {
-        /*var cUnit = CurrentUnit;
-        var pUnit = units[previous];
+        if (units.Count == 0)
+        {
+            TurnManager.Instance.RemovePlayer(this);
+            return;
+        }
 
-        pUnit.SwitchMaterial(pUnit.NormalMaterial);
-        cUnit.SwitchMaterial(cUnit.SelectedMateria);*/
+        if (newUnit < 0 || newUnit > units.Count)
+        {
+            Debug.LogException(new IndexOutOfRangeException("Invelid unit index"), this);
+            return;
+        }
+
+        unit = newUnit;
 
         CurrentUnit.OnSelected();
 
@@ -132,7 +144,6 @@ public class Player : MonoBehaviour
         foreach (var unit in units)
         {
             unit.AlreadyMoved = false;
-            unit.AlreadyUsedAction = false;
         }
     }
 }

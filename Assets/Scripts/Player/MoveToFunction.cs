@@ -1,31 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class MoveToFunction : MonoBehaviour
+public class MoveToFunction : MoveBase
 {
     [SerializeField]
-    private Unit target;
-
-    [SerializeField]
-    private FunctionController controller;
+    protected FunctionController controller;
 
     private Vector2? lastPos;
 
-    [SerializeField]
-    private bool startDisabled;
-    private bool isEnabled;
-
-    public void SetTargetController(Unit target, FunctionController controller)
+    public override void SetTarget(Unit target)
     {
-        this.target = target;
-        SetController(controller);
-    }
+        base.SetTarget(target);
 
-    public void SetController(FunctionController controller)
-    {
-        this.controller = controller;
         controller.transform.position = target.transform.position;
 
         controller.bounds = target.GetMovementBounds();
@@ -35,47 +20,12 @@ public class MoveToFunction : MonoBehaviour
         UpdatePointer(InputManager.MousePos);
     }
 
-    public void DisabeControl()
-    {
-        InputManager.PointerPositionChanged -= UpdatePointer;
-        InputManager.PrimaryAction -= Move;
-        isEnabled = false;
-    }
-
-    public void EnableControl()
-    {
-        if (!isEnabled)
-        {
-            InputManager.PointerPositionChanged += UpdatePointer;
-            InputManager.PrimaryAction += Move;
-            isEnabled = true;
-        }
-    }
-
     public void UpdatePointer()
     {
         UpdatePointer(InputManager.MousePos);
     }
 
-    private void OnEnable()
-    {
-        EnableControl();
-    }
-
-    private void Start()
-    {
-        if (startDisabled)
-        {
-            DisabeControl();
-        }
-    }
-
-    private void OnDisable()
-    {
-        DisabeControl();
-    }
-
-    private void UpdatePointer(Vector2 pos)
+    protected override void UpdatePointer(Vector2 pos)
     {
         if (target != null)
         {
@@ -87,7 +37,7 @@ public class MoveToFunction : MonoBehaviour
         }
     }
     
-    private void Move()
+    protected override void Perform()
     {
         var v = lastPos.GetValueOrDefault();
         if (lastPos.HasValue && controller.bounds.Contains(v))

@@ -11,11 +11,15 @@ public class TurnManager : MonoBehaviour
     public static event Action TurnPasses;
 
     public static TurnManager Instance { get; private set; }
-    
+
+    public Unit CurrentUnit => CurrentPlayer.CurrentUnit;
+
     public Player CurrentPlayer { get; private set; }
 
+    public MoveManager MoveManager => moveManager;
+
     [SerializeField]
-    private MovementManager moveManager;
+    private MoveManager moveManager;
     
     [SerializeField]
     private List<Player> players;
@@ -54,7 +58,7 @@ public class TurnManager : MonoBehaviour
         
         CurrentPlayer.EnableControl();
         CurrentPlayer.SelectedUnitChanged += OnPlayerUnitChanged;
-        moveManager.SetTarget(CurrentPlayer.CurrentUnit);
+        moveManager.ClearMove();
         
         TurnPasses?.Invoke();
     }
@@ -70,7 +74,7 @@ public class TurnManager : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
-        if (currentTime > maxTurnTime) 
+        if (currentTime > maxTurnTime)
         {
             NextTurn(); 
         }
@@ -104,8 +108,6 @@ public class TurnManager : MonoBehaviour
         CurrentPlayer = players[0];
         currentPlayerIndex = -1;
         moveManager.SetupCache();
-        moveManager.NextFunction();
-        moveManager.EnableControl();
         NextTurn();
     }
 
@@ -122,16 +124,16 @@ public class TurnManager : MonoBehaviour
     private void OnPlayerUnitChanged()
     {
         var unit = CurrentPlayer.CurrentUnit;
-        if (unit.AlreadyMoved)
+        moveManager.ClearMove();
+        /*if (unit.AlreadyMoved)
         {
-            moveManager.DisabeControl();
+            //moveManager.DisabeControl();
             moveManager.gameObject.SetActive(false);
         }
         else
         {
-            moveManager.EnableControl();
+            //moveManager.EnableControl();
             moveManager.gameObject.SetActive(true);
-            moveManager.SetTarget(CurrentPlayer.CurrentUnit);
-        }
+        }*/
     } 
 }

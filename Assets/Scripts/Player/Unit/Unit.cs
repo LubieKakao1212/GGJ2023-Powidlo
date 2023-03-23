@@ -21,9 +21,6 @@ public abstract class Unit : MonoBehaviour
     public bool AlreadyMoved { get; set; }
 
     [field: SerializeField]
-    public bool AlreadyUsedAction { get; set; }
-
-    [field: SerializeField]
     public Material SelectedMateria { get; private set; }
 
     [field: SerializeField]
@@ -88,7 +85,6 @@ public abstract class Unit : MonoBehaviour
 
         transform.position += delta;
         AlreadyMoved = true;
-        AlreadyUsedAction = true;
         return true;
     }
 
@@ -105,7 +101,6 @@ public abstract class Unit : MonoBehaviour
     public void SkipTurn()
     {
         AlreadyMoved = true;
-        AlreadyUsedAction = true;
         if (TurnManager.Instance.CurrentPlayer == Owner)
         {
             TurnManager.TurnPasses -= SkipTurn;
