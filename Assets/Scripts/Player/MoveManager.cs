@@ -35,8 +35,8 @@ public class MoveManager : MonoBehaviour
         currentMove = newCurrent;
         if (currentMove != null)
         {
-            currentMove.SetTarget(TurnManager.Instance.CurrentPlayer.CurrentUnit);
             UpdateIfHasControll(hasControll, true);
+            currentMove.SetTarget(TurnManager.Instance.CurrentPlayer.CurrentUnit);
             //currentMove.UpdatePointer();
         }
     }

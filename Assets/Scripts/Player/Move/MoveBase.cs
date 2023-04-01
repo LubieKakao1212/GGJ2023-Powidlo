@@ -14,14 +14,14 @@ public abstract class MoveBase : MonoBehaviour
         this.target = target;
     }
 
-    public void DisabeControl()
+    public virtual void DisabeControl()
     {
         InputManager.PointerPositionChanged -= UpdatePointer;
         InputManager.SecondaryAction -= Perform;
         isEnabled = false;
     }
 
-    public void EnableControl()
+    public virtual void EnableControl()
     {
         if (!isEnabled)
         {
