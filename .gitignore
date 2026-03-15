@@ -63,3 +63,5 @@ crashlytics-build.properties
 fmod_editor.log
 /[Aa]ssets/Plugins/FMOD/Cache/
 
+/.idea
+
