@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class InputManager : MonoBehaviour
     public static event Action SelectNextSecondary;
     public static event Action SelectPreviousSecondary;
 
+    public static event Action<int> SelectNumber;
+    
     public static event Action EndTurn;
 
     public static Vector2 MousePos { get; private set; }
@@ -44,8 +48,20 @@ public class InputManager : MonoBehaviour
 
         input.Selection.NextSecondary.started += (ctx) => SelectNextSecondary?.Invoke();
         input.Selection.PreviousSecondary.started += (ctx) => SelectPreviousSecondary?.Invoke();
+        input.Selection.Number.started += ctx => {
+            var ctrlName = ctx.control.name;
+            if (int.TryParse(ctrlName.Substring(ctrlName.Length - 1), out var value)) {
+                SelectNumber?.Invoke(value);
+            }
+            else {
+                throw new Exception("wrong key");
+            }
+        };
+
 
         input.Turn.EndTurn.started += (ctx) => EndTurn?.Invoke();
+        
+        
     }
 
     private void OnEnable()

@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class MoveManager : MonoBehaviour
 {
@@ -11,16 +9,26 @@ public class MoveManager : MonoBehaviour
     [SerializeField]
     private List<MoveBase> movesByOrder;
 
-    public void SetupCache()
-    {
+    public void SetupCache() {
         movesByOrder = new List<MoveBase>();
 
         foreach (var function in GetComponentsInChildren<MoveBase>(true))
         {
             movesByOrder.Add(function);
         }
+
+        InputManager.SelectNumber += SetCurrentMove;
     }
 
+    public void SetCurrentMove(int id) {
+        if (id == 0) {
+            id = 9;
+        }
+        if (id < movesByOrder.Count) {
+            SetCurrentMove(movesByOrder[id]);
+        }
+    }
+    
     public void SetCurrentMove(MoveBase newCurrent)
     {
         var hasControll = !TurnManager.Instance.CurrentUnit.AlreadyMoved;
