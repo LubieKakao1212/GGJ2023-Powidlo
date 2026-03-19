@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using FMODUnity;
 using UnityEngine;
 
 public class MoveToFunction : MonoBehaviour
@@ -99,7 +97,7 @@ public class MoveToFunction : MonoBehaviour
         }
         else
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/OutOfBounds", GetComponent<Transform>().position);
+            RuntimeManager.PlayOneShot("event:/UI/OutOfBounds", GetComponent<Transform>().position);
         }
     }
 }

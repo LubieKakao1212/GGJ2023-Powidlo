@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using FMODUnity;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -78,7 +76,7 @@ public abstract class Unit : MonoBehaviour
 
         if (AlreadyMoved)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
+            RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
 
             Debug.LogWarning("Cannot move unit that already moved");
             return false;

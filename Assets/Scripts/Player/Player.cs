@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using FMODUnity;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -77,7 +76,7 @@ public class Player : MonoBehaviour
         var unit = CurrentUnit;
         if (unit.AlreadyUsedAction)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
+            RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
             return;
         }
         Ray ray = Camera.main.ScreenPointToRay(InputManager.MousePos);
