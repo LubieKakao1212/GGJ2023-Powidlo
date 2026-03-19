@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.VFX;
 using static DamageUtil;
@@ -45,7 +43,7 @@ public class TickingExplosion : TickingAttack
 
     protected override bool Explode()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(soundEvent, GetComponent<Transform>().position);
+        RuntimeManager.PlayOneShot(soundEvent, GetComponent<Transform>().position);
 
         Collider[] objects = Physics.OverlapSphere(transform.position, size / 2f);
 

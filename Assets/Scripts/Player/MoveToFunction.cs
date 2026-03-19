@@ -1,16 +1,29 @@
+using FMODUnity;
 using UnityEngine;
 
-public class MoveToFunction : MoveBase
+public class MoveToFunction : MonoBehaviour
 {
     [SerializeField]
-    protected FunctionController controller;
+    private Unit target;
+
+    [SerializeField]
+    private FunctionController controller;
 
     private Vector2? lastPos;
 
-    public override void SetTarget(Unit target)
-    {
-        base.SetTarget(target);
+    [SerializeField]
+    private bool startDisabled;
+    private bool isEnabled;
 
+    public void SetTargetController(Unit target, FunctionController controller)
+    {
+        this.target = target;
+        SetController(controller);
+    }
+
+    public void SetController(FunctionController controller)
+    {
+        this.controller = controller;
         controller.transform.position = target.transform.position;
 
         controller.bounds = target.GetMovementBounds();
@@ -20,12 +33,47 @@ public class MoveToFunction : MoveBase
         UpdatePointer(InputManager.MousePos);
     }
 
+    public void DisabeControl()
+    {
+        InputManager.PointerPositionChanged -= UpdatePointer;
+        InputManager.PrimaryAction -= Move;
+        isEnabled = false;
+    }
+
+    public void EnableControl()
+    {
+        if (!isEnabled)
+        {
+            InputManager.PointerPositionChanged += UpdatePointer;
+            InputManager.PrimaryAction += Move;
+            isEnabled = true;
+        }
+    }
+
     public void UpdatePointer()
     {
         UpdatePointer(InputManager.MousePos);
     }
 
-    protected override void UpdatePointer(Vector2 pos)
+    private void OnEnable()
+    {
+        EnableControl();
+    }
+
+    private void Start()
+    {
+        if (startDisabled)
+        {
+            DisabeControl();
+        }
+    }
+
+    private void OnDisable()
+    {
+        DisabeControl();
+    }
+
+    private void UpdatePointer(Vector2 pos)
     {
         if (target != null)
         {
@@ -37,7 +85,7 @@ public class MoveToFunction : MoveBase
         }
     }
     
-    protected override void Perform()
+    private void Move()
     {
         var v = lastPos.GetValueOrDefault();
         if (lastPos.HasValue && controller.bounds.Contains(v))
@@ -49,7 +97,7 @@ public class MoveToFunction : MoveBase
         }
         else
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/OutOfBounds", GetComponent<Transform>().position);
+            RuntimeManager.PlayOneShot("event:/UI/OutOfBounds", GetComponent<Transform>().position);
         }
     }
 }
