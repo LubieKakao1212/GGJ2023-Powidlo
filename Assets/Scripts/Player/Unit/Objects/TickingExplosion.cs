@@ -26,6 +26,8 @@ public class TickingExplosion : TickingAttack
     [SerializeField]
     private bool inflictStun;
 
+    [SerializeField] private GameObject spawnOnFinish;
+    
     private bool initialising;
 
     protected override void Start()
@@ -59,6 +61,10 @@ public class TickingExplosion : TickingAttack
                 effect.SendEvent("Burst");
                 Destroy(gameObject, 5f);
             }).setEaseInBack().setOvershoot(0.5f);
+
+            if (spawnOnFinish != null) {
+                Instantiate(spawnOnFinish, transform.position, transform.rotation);
+            }
         }
         else
         {

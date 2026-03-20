@@ -1,10 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &497737664198385190
+--- !u!1001 &4780888418733033015
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1614061659676649505, guid: 6b4e4ce10c754074781f654222816046, type: 3}
@@ -21,10 +22,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2699596991301708284, guid: 6b4e4ce10c754074781f654222816046, type: 3}
       propertyPath: m_Name
-      value: Discharge Variant
+      value: Discharge (First)
       objectReference: {fileID: 0}
     - target: {fileID: 3342736444874782818, guid: 6b4e4ce10c754074781f654222816046, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c60feadabc74f1a49ac11c4f9f390236, type: 2}
     - target: {fileID: 5351122796488051796, guid: 6b4e4ce10c754074781f654222816046, type: 3}
@@ -138,16 +139,21 @@ PrefabInstance:
     - target: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
       propertyPath: soundEvent
       value: event:/SFX/CapacitorExplosion
-      propertyPath: inflictStun
-      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
+      propertyPath: spawnOnFinish
+      value: 
+      objectReference: {fileID: 7045763155044889069, guid: 88b07bfecd2e24d48bb3d717b3e59c73, type: 3}
     - target: {fileID: 7559188162983766780, guid: 6b4e4ce10c754074781f654222816046, type: 3}
       propertyPath: damageOnStartup
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8812970904465388090, guid: 6b4e4ce10c754074781f654222816046, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c60feadabc74f1a49ac11c4f9f390236, type: 2}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b4e4ce10c754074781f654222816046, type: 3}
