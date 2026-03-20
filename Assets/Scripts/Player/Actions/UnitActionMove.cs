@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class UnitActionMove : UnitActionBase {
 
     [SerializeField] private float sphereCastRadius = 0.5f;
     [SerializeField] private LayerMask sphereCastMask;
-
+    [SerializeField] private float moveTime = 0.25f;
+    
     [SerializeField] private int meshResolution;
-    [SerializeField] private float animTime = 0.1f;
-
+    [SerializeField] private float meshAnimTime = 0.1f;
+    
     [SerializeField] private GameObject pointerObj;
     [SerializeField] private MeshFilter meshFilter;
 
@@ -17,13 +19,12 @@ public class UnitActionMove : UnitActionBase {
     private int _resolution;
     
     protected override void UpdatePointer(Vector2 pos) {
-
         pointerObj.transform.position = GetMoveTarget();
-
     }
 
     protected override void Perform() {
-        
+        var startPos = unit.transform.position;
+        LeanTween.move(unit.gameObject, GetMoveTarget(), moveTime).setEaseInOutQuad().setOnUpdate((Vector3 pos) => UpdateMesh(5 - Vector3.Distance(startPos, pos)));
     }
 
     public override void EnableControl() {
@@ -37,10 +38,10 @@ public class UnitActionMove : UnitActionBase {
 
         var pos = unit.transform.position;
         
-        _animId = LeanTween.value(gameObject, 0f, 1f, animTime).setOnUpdate(r => _mesh.FillViewMesh(pos, 5 * r, sphereCastRadius, sphereCastMask, _resolution)).id;
+        _animId = LeanTween.value(gameObject, 0f, 1f, meshAnimTime).setOnUpdate(r => UpdateMesh(r * 5)).id;
         meshFilter.mesh = _mesh;
     }
-
+    
     public override void DisabeControl() {
         base.DisabeControl();
         LeanTween.cancel(_animId);
@@ -62,6 +63,10 @@ public class UnitActionMove : UnitActionBase {
         var pos = Util.CastDir(moveRay, dist, sphereCastRadius, sphereCastMask);
         
         return pos;
+    }
+    
+    private void UpdateMesh(float radius) {
+        _mesh.FillViewMesh(unit.transform.position, radius, sphereCastRadius, sphereCastMask, _resolution);
     }
     
     

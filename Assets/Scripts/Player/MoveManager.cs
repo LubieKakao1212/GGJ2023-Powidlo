@@ -1,14 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class MoveManager : MonoBehaviour
 {
-    [FormerlySerializedAs("currentMove")] [SerializeField]
-    private UnitActionBase currentAction;
+    [SerializeField] private UnitActionBase currentAction;
 
-    [SerializeField]
-    private List<UnitActionBase> movesByOrder;
+    [SerializeField] private List<UnitActionBase> movesByOrder;
 
     public void SetupCache() {
         movesByOrder = new List<UnitActionBase>();
@@ -50,18 +47,18 @@ public class MoveManager : MonoBehaviour
         }
     }
 
-    public void UpdateIfHasControll(bool hasControll, bool newState)
+    public void ClearMove()
+    {
+        UpdateIfHasControll(true, false);
+        currentAction = null;
+    }
+
+    private void UpdateIfHasControll(bool hasControll, bool newState)
     {
         if (hasControll && currentAction != null)
         {
             currentAction.gameObject.SetActive(newState);
         }
-    }
-
-    public void ClearMove()
-    {
-        UpdateIfHasControll(true, false);
-        currentAction = null;
     }
 }
 
