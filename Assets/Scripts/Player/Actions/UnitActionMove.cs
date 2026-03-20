@@ -24,7 +24,10 @@ public class UnitActionMove : UnitActionBase {
 
     protected override void Perform() {
         var startPos = unit.transform.position;
-        LeanTween.move(unit.gameObject, GetMoveTarget(), moveTime).setEaseInOutQuad().setOnUpdate((Vector3 pos) => UpdateMesh(5 - Vector3.Distance(startPos, pos)));
+        var target = GetMoveTarget();
+        var sourceMove = unit.MovementLeftThisTurn;
+        unit.OnMove(target - startPos);
+        LeanTween.move(unit.gameObject, target, moveTime).setEaseInOutQuad().setOnUpdate((Vector3 pos) => UpdateMesh(sourceMove - Vector3.Distance(startPos, pos)));
     }
 
     public override void EnableControl() {
@@ -37,8 +40,9 @@ public class UnitActionMove : UnitActionBase {
         }
 
         var pos = unit.transform.position;
+        var radius = unit.MovementLeftThisTurn;
         
-        _animId = LeanTween.value(gameObject, 0f, 1f, meshAnimTime).setOnUpdate(r => UpdateMesh(r * 5)).id;
+        _animId = LeanTween.value(gameObject, 0f, 1f, meshAnimTime).setOnUpdate(r => UpdateMesh(r * radius)).id;
         meshFilter.mesh = _mesh;
     }
     
@@ -59,7 +63,7 @@ public class UnitActionMove : UnitActionBase {
         var deltaDir = targetPoint - unitPos;
         var moveRay = new Ray(unitPos, deltaDir);
         
-        var dist = Mathf.Min(deltaDir.magnitude, 5); //TODO replace 5 with unit movement range
+        var dist = Mathf.Min(deltaDir.magnitude, unit.MovementLeftThisTurn);
         var pos = Util.CastDir(moveRay, dist, sphereCastRadius, sphereCastMask);
         
         return pos;
@@ -68,6 +72,5 @@ public class UnitActionMove : UnitActionBase {
     private void UpdateMesh(float radius) {
         _mesh.FillViewMesh(unit.transform.position, radius, sphereCastRadius, sphereCastMask, _resolution);
     }
-    
     
 }

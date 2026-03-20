@@ -49,8 +49,9 @@ public class MoveManager : MonoBehaviour
 
     public void ClearMove()
     {
-        UpdateIfHasControll(true, false);
-        currentAction = null;
+        // UpdateIfHasControll(true, false);
+        // currentAction = null;
+        SetCurrentMove(1);
     }
 
     private void UpdateIfHasControll(bool hasControll, bool newState)

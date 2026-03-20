@@ -56,7 +56,7 @@ public class TurnManager : MonoBehaviour
 
         CurrentPlayer = players[currentPlayerIndex];
         
-        CurrentPlayer.EnableControl();
+        CurrentPlayer.EnableControl(true);
         CurrentPlayer.SelectedUnitChanged += OnPlayerUnitChanged;
         moveManager.ClearMove();
         

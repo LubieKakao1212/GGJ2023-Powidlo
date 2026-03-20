@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class MeleeUnit : Unit
@@ -7,51 +6,38 @@ public class MeleeUnit : Unit
     [SerializeField]
     private TickingExplosion explosion;
 
-    private int slowCounter;
+    [Tooltip("Multiplicative")]
+    [SerializeField, Range(0, 1)] private float attackMovePenalty = 0.5f;
+    
+    private bool _didAttackLastTurn;
 
     public override void DoAction(Vector2 worldCursor)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricExplosion", GetComponent<Transform>().position);
+        RuntimeManager.PlayOneShot("event:/SFX/ElectricExplosion", GetComponent<Transform>().position);
         //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ElectricExplosionINIT", GetComponent<Transform>().position);
 
         var expl = Instantiate(explosion, transform.position, Quaternion.identity);
         expl.playerId = playerId;
-
-        this.isSlowed = true;
-        slowCounter = 2;
-        TurnManager.TurnPasses += DisableSlow;
-
-        //SkipNextTurn();
+        _didAttackLastTurn = true;
     }
 
-    public override bool Move(Vector3 delta)
-    {
-
-       
-
-        if (base.Move(delta)) 
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumMove", GetComponent<Transform>().position);
-
-            return true;
+    public override void OnTurnStart() {
+        base.OnTurnStart();
+        if (_didAttackLastTurn) {
+            _didAttackLastTurn = false;
+            MovementLeftThisTurn *= attackMovePenalty;
         }
-        return false;
+    }
 
+    public override void OnMove(Vector3 delta) {
+        base.OnMove(delta);
+        RuntimeManager.PlayOneShot("event:/Characters/VacuumMove", GetComponent<Transform>().position);
     }
 
     public override void OnSelected()
     {
         base.OnSelected();
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/VacuumSelect", GetComponent<Transform>().position);
-    }
-
-    private void DisableSlow()
-    {
-        if (slowCounter-- <= 0)
-        {
-            this.isSlowed = false;
-            TurnManager.TurnPasses -= DisableSlow;
-        }
+        RuntimeManager.PlayOneShot("event:/Characters/VacuumSelect", GetComponent<Transform>().position);
     }
 }

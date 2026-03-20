@@ -24,11 +24,9 @@ public abstract class Unit : MonoBehaviour
     [field: SerializeField]
     public Material NormalMaterial { get; private set; }
 
-    [SerializeField]
-    private Rect movementBound;
+    public float MovementLeftThisTurn { get; protected set; }
 
-    [SerializeField]
-    private Rect slowedMovementBound;
+    [SerializeField] private float movementPerTurn = 5f;
 
     [SerializeField]
     private MeshRenderer rend;
@@ -38,9 +36,6 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField]
     private float collisionSize;
-
-    [SerializeField]
-    protected bool isSlowed;
 
     public void Damage(int amount)
     {
@@ -54,36 +49,14 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
+    public virtual void OnTurnStart() {
+        MovementLeftThisTurn = movementPerTurn;
+    }
+    
     public abstract void DoAction(Vector2 worldCursor);
 
-    public virtual bool Move(Vector3 delta)
-    {
-        var targetPos = transform.position + delta;
-
-        var hits = Physics.OverlapSphere(targetPos, collisionSize);
-
-        foreach (var hit in hits)
-        {
-            if ((hit.GetComponent<Unit>() != null || hit.GetComponent<Obstacle>() != null) && hit != GetComponent<Collider>())
-            {
-                //Put sound here
-                return false;
-            }
-        }
-
-        if (AlreadyMoved)
-        {
-            RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
-
-            Debug.LogWarning("Cannot move unit that already moved");
-            return false;
-        }
-
-        
-
-        transform.position += delta;
-        AlreadyMoved = true;
-        return true;
+    public virtual void OnMove(Vector3 delta) {
+        MovementLeftThisTurn -= delta.magnitude;
     }
 
     public void SwitchMaterial(Material target)
@@ -109,12 +82,7 @@ public abstract class Unit : MonoBehaviour
     {
         
     }
-
-    public virtual Rect GetMovementBounds()
-    {
-        return isSlowed ? slowedMovementBound : movementBound;
-    }
-
+    
     private void Start()
     {
         Owner.SelectedUnitChanged += AdjustMaterial;

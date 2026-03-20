@@ -8,14 +8,14 @@ public class Player : MonoBehaviour
 {
     public event Action SelectedUnitChanged;
 
-    public Unit CurrentUnit => units[unit % units.Count];
+    public Unit CurrentUnit => units[_unit % units.Count];
 
     [SerializeField]
     private List<Unit> units;
 
-    private int unit = 0;
+    private int _unit = 0;
 
-    private bool isEnabled;
+    private bool _isEnabled;
 
     private void Start()
     {
@@ -24,17 +24,22 @@ public class Player : MonoBehaviour
 
     public void DisabeControl()
     {
-        isEnabled = false;
+        _isEnabled = false;
         InputManager.SelectNextSecondary -= NextUnit;
         InputManager.SelectPreviousSecondary -= PreviousUnit;
         InputManager.PrimaryAction -= DoPrimaryAction;
     }
 
-    public void EnableControl()
+    public void EnableControl(bool newTurn)
     {
-        if (!isEnabled)
+        if (newTurn) {
+            foreach (var unit in units) {
+                unit.OnTurnStart();
+            }
+        }
+        if (!_isEnabled)
         {
-            isEnabled = true;
+            _isEnabled = true;
             InputManager.SelectNextSecondary += NextUnit;
             InputManager.SelectPreviousSecondary += PreviousUnit;
             InputManager.PrimaryAction += DoPrimaryAction;
@@ -43,12 +48,12 @@ public class Player : MonoBehaviour
 
     public void NextUnit()
     {
-        SelectUnit((unit + 1) % units.Count);
+        SelectUnit((_unit + 1) % units.Count);
     }
 
     public void PreviousUnit()
     {
-        var u = unit--;
+        var u = _unit--;
         if (u < 0)
         {
             u = units.Count - 1;
@@ -103,7 +108,7 @@ public class Player : MonoBehaviour
             int i = units.IndexOf(unit);
             if (i == (units.Count - 1))
             {
-                this.unit = -1;
+                this._unit = -1;
                 flag = true;
             }
             units.RemoveAt(i);
@@ -131,7 +136,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        unit = newUnit;
+        _unit = newUnit;
 
         CurrentUnit.OnSelected();
 
