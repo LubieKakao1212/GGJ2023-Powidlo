@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MoveManager : MonoBehaviour
 {
-    [SerializeField]
-    private MoveBase currentMove;
+    [FormerlySerializedAs("currentMove")] [SerializeField]
+    private UnitActionBase currentAction;
 
     [SerializeField]
-    private List<MoveBase> movesByOrder;
+    private List<UnitActionBase> movesByOrder;
 
     public void SetupCache() {
-        movesByOrder = new List<MoveBase>();
+        movesByOrder = new List<UnitActionBase>();
 
-        foreach (var function in GetComponentsInChildren<MoveBase>(true))
+        foreach (var function in GetComponentsInChildren<UnitActionBase>(true))
         {
             movesByOrder.Add(function);
         }
@@ -22,14 +23,14 @@ public class MoveManager : MonoBehaviour
 
     public void SetCurrentMove(int id) {
         if (id == 0) {
-            id = 9;
+            id = 10;
         }
-        if (id < movesByOrder.Count) {
+        if (--id < movesByOrder.Count) {
             SetCurrentMove(movesByOrder[id]);
         }
     }
     
-    public void SetCurrentMove(MoveBase newCurrent)
+    public void SetCurrentMove(UnitActionBase newCurrent)
     {
         var hasControll = !TurnManager.Instance.CurrentUnit.AlreadyMoved;
         UpdateIfHasControll(hasControll, false);
@@ -40,27 +41,27 @@ public class MoveManager : MonoBehaviour
             return;
         }
 
-        currentMove = newCurrent;
-        if (currentMove != null)
+        currentAction = newCurrent;
+        if (currentAction != null)
         {
+            currentAction.SetTarget(TurnManager.Instance.CurrentPlayer.CurrentUnit);
             UpdateIfHasControll(hasControll, true);
-            currentMove.SetTarget(TurnManager.Instance.CurrentPlayer.CurrentUnit);
             //currentMove.UpdatePointer();
         }
     }
 
     public void UpdateIfHasControll(bool hasControll, bool newState)
     {
-        if (hasControll && currentMove != null)
+        if (hasControll && currentAction != null)
         {
-            currentMove.gameObject.SetActive(newState);
+            currentAction.gameObject.SetActive(newState);
         }
     }
 
     public void ClearMove()
     {
         UpdateIfHasControll(true, false);
-        currentMove = null;
+        currentAction = null;
     }
 }
 

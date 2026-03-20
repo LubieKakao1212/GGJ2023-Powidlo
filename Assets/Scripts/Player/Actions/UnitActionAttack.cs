@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
-public class MoveAttack : MoveBase
+public class UnitActionAttack : UnitActionBase
 {
     protected override void Perform()
     {
-        if (target.AlreadyMoved)
+        if (unit.AlreadyMoved)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
+            RuntimeManager.PlayOneShot("event:/UI/NoAction", GetComponent<Transform>().position);
             return;
         }
         Ray ray = Camera.main.ScreenPointToRay(InputManager.MousePos);
@@ -17,9 +16,9 @@ public class MoveAttack : MoveBase
 
         //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/LaserShot", GetComponent<Transform>().position);
 
-        target.DoAction(new Vector2(hit.point.x, hit.point.z));
+        unit.DoAction(new Vector2(hit.point.x, hit.point.z));
 
-        target.AlreadyMoved = true;
+        unit.AlreadyMoved = true;
     }
 
     protected override void UpdatePointer(Vector2 pos)

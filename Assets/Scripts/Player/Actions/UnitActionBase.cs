@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MoveBase : MonoBehaviour
+public abstract class UnitActionBase : MonoBehaviour
 {
     [SerializeField]
-    protected Unit target;
+    protected Unit unit;
 
     private bool isEnabled;
 
     public virtual void SetTarget(Unit target)
     {
-        this.target = target;
+        this.unit = target;
     }
 
     public virtual void DisabeControl()
